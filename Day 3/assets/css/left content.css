@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.left-content{
+    height: 500px;
+    width: 40%;
+    float: left;
+    border-right: 1px solid #DFE6E8;
+}
+img{
+    padding-top:40px;
+    padding-left:30px;
+    width: 80%;
+    height: 80%;
+}

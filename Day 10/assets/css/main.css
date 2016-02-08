@@ -1,0 +1,239 @@
+.top{
+    height: 80px;
+    font-family: 'Lato', sans-serif;
+    line-height: 80px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #555555;
+}
+.left{
+    height: 100%;
+}
+.right{
+    height: 100%;
+}
+.nav{
+    width: 100%;
+    position: absolute;
+}
+.nav-bar{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-left: 60px;
+}
+.nav-bar > li {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-bar > li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 50px;
+    color: #555555;
+}
+.hr{
+    width:1px;
+    height: 60px;
+    color: grey;
+    float: left;
+    margin-right: 10px;
+}
+.left-1{
+    width: 80px;
+    height: 100%;
+    background-color: black;
+    line-height: 80px;
+    text-align: center;
+    color: white;
+    float: left;
+}
+.lupa{
+    float: left;
+    display: inline-block;
+}
+.search{
+    float: left;
+}
+.search a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: grey;
+}
+.right-1{
+    width: 50px;
+    height: 30px;
+    background-color: #6c6423;
+    line-height: 80px;
+    text-align: center;
+    color: white;
+    float: right;
+}
+.head{
+    height: 800px;
+    background: url('../img/head.jpg') no-repeat;
+    background-size: cover;
+}
+.left-a{
+    border:2px black solid;
+}
+.left-b{
+    border:2px black solid;
+}
+.left-c{
+    border:2px black solid;
+}
+.right-a{
+    border:2px black solid;
+}
+.right-b{
+    overflow: hidden;
+    border:2px black solid;
+}
+.first-img{
+    float: left;
+    width: 100%;
+    height: 470px;
+    padding-left: 3%;
+    margin-top: 3%;
+}
+
+.second-img{
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    height: 150px;
+    padding-left: 3%;
+    margin-top: 6%;
+}
+.second-img:hover {
+    transform: scale(1.5);
+    cursor:zoom-in
+}
+.third-img{
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    height: 150px;
+    padding-left: 3%;
+    margin-top: 3%;
+}
+.third-img:hover {
+    transform: scale(1.5);
+    cursor:zoom-in
+}
+.fourth-img{
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    height: 150px;
+    padding-left: 3%;
+    margin-top: 3%;
+}
+.fourth-img:hover {
+    transform: scale(1.5);
+    cursor:zoom-in
+}
+
+.finish{
+    width: 40%;
+    height: 10%;
+    padding: 5px;
+    font-size: 5px;
+    color:#555555;
+    text-indent: 40%;
+    border: solid #cccccc 1px;
+    border-radius: 5px;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right white;
+    -webkit-appearance: none;
+    background-position-x: 90%;
+}
+.btn {
+    padding: 12px 16px;
+    color: white;
+    background-color: #c2c2c2;
+    border: 1px solid #B1B1B1;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #2F90EF;
+    border-color: #1061AF;
+}
+
+.proof .sub-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    border: none;
+}
+.main-third{
+    width: 100%;
+    height: 500px;
+    background-color: #ef243c;
+    overflow: hidden;
+}
+.circle{
+    width: 18px;
+    height: 18px;
+    border: 1px #000000 solid;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+}
+.line{
+    width: 10%;
+}
+
+.col-33-a{
+    float: right;
+    height: 400px;
+    width: 25%;
+    margin-top: 50px;
+    margin-right: -80px;
+    background-color: #1061AF;
+}
+.col-33-b{
+    float: right;
+    height: 400px;
+    width: 25%;
+    margin-right: 25px;
+    margin-top: 50px;
+    background-color: #1061AF;
+}
+.col-33-c{
+    float: right;
+    height: 400px;
+    width: 25%;
+    margin-right:25px;
+    margin-top: 50px;
+    background-color: #1061AF;
+}
+.main-fourth{
+    height: 500px;
+}
+.col-33-1{
+    height: 300px;
+    border-right: 1px black solid;
+}
+.col-33-2{
+    height: 300px;
+    border-right: 1px black solid;
+}
+.portrait {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.footer{
+    background-color: #2F90EF;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.nav-footer a{
+    text-decoration: none;
+}

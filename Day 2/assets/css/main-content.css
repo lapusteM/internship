@@ -1,0 +1,42 @@
+.main content{
+    width: 1810px;
+    height: 500px;
+    clear: both;
+}
+.left-content{
+    width: 70%;
+    height: 500px;
+    float: left;
+  }
+.right-content{
+    width: 30%;
+    height: 500px;
+    float: right;
+}
+.main-img{
+    height: 50%;
+    width: 50%;
+    float: left;
+}
+.text{
+    width: 100px;
+    float: left;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+button{
+    float: left;
+    width: 100px;
+    margin-top: 16%;
+    margin-left: 10%;
+}
+.contact{
+    margin-top: 15%;
+    margin-left: 50%;
+
+}
+.form{
+    margin-left: 250px;
+}
+
+
