@@ -1,0 +1,87 @@
+// out: ../css/styles.css
+
+@import 'variables';
+@import 'elements';
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ font-size:100%;
+ vertical-align:baseline;
+ background:transparent;
+}
+html,
+body {
+  height: 100%;
+  max-height: 100%;
+}
+body {
+  background: @bodyBackground;
+}
+.main-content{
+	width: 450px;
+	height: 650px;
+	margin: 0 auto;
+	.vertical-center
+}
+.div-top{
+	background-color: @topDiv;
+	background-repeat: no-repeat;
+	background-position: center;
+	height:50%;
+	width: 100%;
+}
+.inner-content{
+
+	h1{
+		color: #4A4A4A;
+		padding: 40px 0 30px 60px;
+		font-size: 18px;
+	}
+	h3{
+		color: #B84452;
+		padding: 0 120px 5px 60px;
+		font-size: 18px;
+	}
+}
+.div-bottom{
+	background-color: @bottomDiv;
+	height: 45%;
+	width: 100%;
+	h1{
+		color: #9B9B9B;
+	}
+}
+.details{
+		span{
+			color: #4A4A4A;
+			font-size: 15px;
+			}
+		p{
+			color:#4A4A4A;
+			font-size: 15px;
+			padding-right: 80px;
+			font-weight: 500;
+		}
+		color:#9B9B9B;
+		padding-left: 60px;
+		font-size: 15px
+}
+hr{
+	margin-top: 15px;
+	width: 80%;
+	background-color: #4A4A4A;
+}
