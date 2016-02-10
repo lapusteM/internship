@@ -1,0 +1,42 @@
+.logo, .menu, .menu-details, .search, .cart, .vertical-hr {
+    display: inline-block;
+}
+
+.logo{
+    background-color: black;
+    color: white;
+    width: 80px;
+}
+
+.menu-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    display: inline-block;
+}
+
+.menu-details{
+    float: right;
+}
+
+.header-height{
+    height: 50px;
+    line-height: 50px;
+}
+
+.search {
+    /*border-right: 1px solid grey;*/
+    padding-right: 10px;
+}
+
+.cart{
+    padding-left: 10px;
+}
+
+.vertical-hr {
+    width:1px;
+    height: 60px;
+}
