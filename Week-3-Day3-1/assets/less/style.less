@@ -47,12 +47,12 @@ body {
 .inner-content{
 
 	h1{
-		color: #4A4A4A;
+		color: @h1Color;
 		padding: 40px 0 30px 60px;
 		font-size: 18px;
 	}
 	h3{
-		color: #B84452;
+		color: @h3Color;
 		padding: 0 120px 5px 60px;
 		font-size: 18px;
 	}
@@ -66,8 +66,11 @@ body {
 	}
 }
 .details{
+      color:grey;
+      padding-left: 60px;
+      font-size: 15px;
 		span{
-			color: #4A4A4A;
+			color: @spanColor;
 			font-size: 15px;
 			}
 		p{
@@ -76,9 +79,6 @@ body {
 			padding-right: 80px;
 			font-weight: 500;
 		}
-		color:#9B9B9B;
-		padding-left: 60px;
-		font-size: 15px
 }
 hr{
 	margin-top: 15px;

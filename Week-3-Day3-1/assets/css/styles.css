@@ -75,7 +75,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 menu,
 nav,
 section,
@@ -116,12 +115,12 @@ body {
   width: 100%;
 }
 .inner-content h1 {
-  color: #4A4A4A;
+  color: #4a4a4a;
   padding: 40px 0 30px 60px;
   font-size: 18px;
 }
 .inner-content h3 {
-  color: #B84452;
+  color: #b84452;
   padding: 0 120px 5px 60px;
   font-size: 18px;
 }
@@ -134,12 +133,12 @@ body {
   color: #9B9B9B;
 }
 .details {
-  color: #9B9B9B;
+  color: grey;
   padding-left: 60px;
   font-size: 15px;
 }
 .details span {
-  color: #4A4A4A;
+  color: #9b9b9b;
   font-size: 15px;
 }
 .details p {
