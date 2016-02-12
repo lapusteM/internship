@@ -4,30 +4,86 @@
     <meta charset="utf-8">
     <title>Week3-Day3-2</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-  </head>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>  </head>
   <body class="background">
       <div class="main-container">
         <div  class="plane">
             <img src="assets/img/plane.png" alt="plane logo" />
         </div>
         <div class="title">
-            <h1>FLY AWAY</h1>
+            <h2>FLY AWAY</h2>
             <h3>SOMEWHERE</h3>
         </div>
-        <div>
+        <div class="bottom">
           <form>
             I want to fly from
-            <input type="text"/>
+            <input class="input-first" type="text"/>
+          </form>
+        </div>
+        <div class="bottom">
+          <form>
+            to
+            <input class="input-second" type="text"/>
+          </form>
+        </div><br/>
+        <div class="bottom">
+          <span>I will be flying </span>
+          <select class="drop" title="sel">
+              <option value="40">WITH OTHERS</option>
+              <option value="41">ALONE</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+          </select>
+        </div>
+        <div class="top">
+          <form>
+            There will be
+            <input class="input-small"type="text" maxlength="2"/>
+            <span>&nbsppeople in total.</span>
+          </form>
+        </div>
+        <div class="return">
+          <span>This is a &nbsp</span>
+          <select class="drop" title="sel">
+              <option value="40">RETURN</option>
+              <option value="41">ONE-WAY</option>
+          </select>
+          <span>&nbsp flight</span><br />
+        </div>
+        <span>My dates are </span>
+        <select class="drop" title="sel">
+            <option value="40">FLEXIBLE</option>
+            <option value="41">FIXED</option>
+            <option value="42">+/- 2 Days</option>
+        </select>
+        <div>
+          <form>
+            Departure date
+            <input class="input-small" type="text" maxlength="2"/>
+            /
+            <input class="input-small" type="text" maxlength="2"/>
+            /
+            <input class="input-small" type="text" maxlength="4"/>
+            <div  class="calendar">
+                <img src="assets/img/calendar.png" alt="plane logo" />
+            </div>
           </form>
         </div>
         <div>
-          <form>
-            to
-            <input type="text"/>
+          <form class="form-bottom">
+            Return date
+            <input class="input-small" type="text" maxlength="2"/>
+            /
+            <input class="input-small" type="text" maxlength="2"/>
+            /
+            <input class="input-small" type="text" maxlength="4"/>
+            <div  class="calendar">
+                <img src="assets/img/calendar.png" alt="plane logo" />
+            </div>
+            <div class="btn">
+              <a href="#" class="btn">FIND FLIGHTS</a>
+            </div>
           </form>
-        </div>
-        <div class="">
-
         </div>
       </div>
   </body>
