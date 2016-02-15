@@ -14,6 +14,23 @@
 .pull-right {
   float: right;
 }
+.height .header {
+  height: 80px;
+}
+.height .main {
+  height: 340px;
+}
+.height .footer {
+  height: 80px;
+}
+.margin-left {
+  margin-left: 40px;
+  margin-top: 25px;
+}
+.margin-right {
+  margin-right: 40px;
+  margin-top: 25px;
+}
 html,
 body,
 div,
@@ -95,6 +112,13 @@ body {
   max-height: 100%;
   margin: 0;
 }
+* {
+  box-sizing: border-box;
+}
+:after,
+:before {
+  box-sizing: border-box;
+}
 .cf:before,
 .cf:after,
 .row:before,
@@ -116,22 +140,87 @@ body {
   width: 650px;
   height: 100%;
 }
-.main-content {
+.left {
+  float: left;
+  background-color: #f8f7f0;
   width: 300px;
   height: 500px;
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
 }
-.left {
-  float: left;
-  background-color: #f8f7f0;
+.left .header {
+  height: 80px;
+}
+.left .main {
+  height: 340px;
+}
+.left .footer {
+  height: 80px;
 }
 .right {
   float: left;
   background-color: #d5dbc4;
-  margin-left: 5%;
+  width: 300px;
+  height: 500px;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-left: 45px;
 }
-span {
+.right .header {
+  height: 80px;
+}
+.right .main {
+  height: 340px;
+}
+.right .footer {
+  height: 80px;
+}
+.main {
+  margin: 0 40px 0 40px;
+}
+.main hr {
+  width: 107%;
+}
+.main h4 {
+  color: #4a4a4a;
+}
+.main h5 {
+  color: #9b9b9b;
+  font-size: 12px;
+  margin-top: 3px;
+}
+.header {
+  padding: 20px 40px 20px 40px;
+}
+.header hr {
+  width: 107%;
+  border-color: black;
+}
+.header h3 {
+  color: #4a4a4a;
+}
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer ul {
+  width: 100%;
+  margin-left: 30px;
+}
+.footer li {
+  display: inline;
+  margin-left: 25px;
   font-size: 20px;
+}
+.footer hr {
+  width: 80%;
+  margin-left: 35px;
+  border-color: black;
+}
+.right .header h5 {
+  color: #9b9b9b;
+  font-size: 12px;
+  margin-top: 3px;
 }

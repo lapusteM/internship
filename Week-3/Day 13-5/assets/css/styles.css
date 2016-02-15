@@ -1,0 +1,297 @@
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.vertical-bottom {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.horizontal-center {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+}
+.vertical {
+  position: relative;
+  display: table;
+  width: 100%;
+}
+.vertical .inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.backImg {
+  background: url("../img/car+background.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.backImg2 {
+  background: url("../img/sketch.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html,
+body {
+  height: 100%;
+  max-height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+.col-100 {
+  width: 100%;
+  height: 100%;
+}
+.col-50 {
+  width: 50%;
+  height: 100%;
+}
+.col-25 {
+  width: 25%;
+  height: 100%;
+}
+.col-33 {
+  width: 33.3333%;
+  height: 100%;
+}
+.col-66 {
+  width: 66.6666%;
+  height: 100%;
+}
+.col-75 {
+  width: 75%;
+  height: 100%;
+}
+.col-10 {
+  width: 10%;
+  height: 100%;
+}
+.col-20 {
+  width: 20%;
+  height: 100%;
+}
+.col-40 {
+  width: 40%;
+  height: 100%;
+}
+.col-90 {
+  width: 90%;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+:after,
+:before {
+  box-sizing: border-box;
+}
+.cf:before,
+.cf:after,
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.cf:after,
+.row:after {
+  clear: both;
+}
+[class^="col-"],
+[class*=" col-"] {
+  float: left;
+}
+body {
+  background-color: #363C5E;
+}
+.content {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0 auto;
+  height: 60%;
+  width: 800px;
+}
+.main-content {
+  height: 40%;
+  width: 800px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.main-content .logo {
+  width: 119px;
+  height: 59px;
+  margin: 0 auto;
+}
+.main-content p {
+  text-align: center;
+  color: white;
+  font-size: 45px;
+}
+.main-content :nth-child(3) {
+  font-size: 35px;
+}
+.second-content {
+  height: 60%;
+  width: 800px;
+  box-shadow: 0px 5px 103px -9px rgba(0, 0, 0, 0.75);
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.second-content .left {
+  float: left;
+  width: 80%;
+  height: 100%;
+  background: url("../img/car+background.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.second-content .left p:first-child {
+  color: #FF7F00;
+  font-size: 70px;
+  text-transform: uppercase;
+  line-height: 60px;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+.second-content .left p:nth-child(2) {
+  color: #4a4a4a;
+  font-size: 30px;
+  margin-left: 70px;
+}
+.second-content .left hr {
+  width: 260px;
+  margin-left: 70px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.second-content .left p:nth-child(4) {
+  text-transform: uppercase;
+  color: #4a4a4a;
+  margin-left: 70px;
+  font-size: 20px;
+}
+.second-content .left p:nth-child(4) span {
+  color: #FF7F00;
+}
+.second-content .right {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: #FF7F00;
+}
+.second-content .right .link {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.second-content .right .link a {
+  color: white;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+.second-content .right p {
+  text-transform: uppercase;
+}
