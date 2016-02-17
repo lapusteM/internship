@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Project Files</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("li.folder").on("click", function() {
+					$(this).next(".branch").slideToggle(50);
+				});
+				
+				$("li a").on("click", function() {
+					var $this = $(this);
+					$this.parent().next(".branch").find(".branch").slideToggle(50);
+					
+					$this.text( $this.text() == "-" ? "+" : "-" );
+					return false;
+				});
+			});
+		</script>
+	</head>
+<body>
+	<!-- Basic structures -->
+	<div class="wrap">
+		<div class="wrap main left">
+			<h2>Basic Structures</h2>
+			<p>Small projects; light front-end involvement</p>
+			<ul>
+				<li class="folder"><b>Project Name</b></li>
+				<li class="branch">
+					<ul>
+						<li class="folder">css</li>
+						<li class="branch">
+							<ul>
+								<li class="css">styles.css</li>
+							</ul>
+						</li>
+						<li class="folder">img</li>
+						<li class="branch">
+							<ul>
+								<li class="png">sprite.png</li>
+							</ul>
+						</li>
+						<li class="folder">js</li>
+						<li class="branch">
+							<ul>
+								<li class="js">scripts.js</li>
+							</ul>
+						</li>
+						<li class="html">index.html</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- Basic to mid-level structures -->
+		<div class="wrap main left">
+			<h2>Basic to Mid-Level Structures</h2>
+			<p>Small to medium projects; moderate front-end involvement</p>
+			<ul>
+				<li class="folder"><b>Project Name</b></li>
+				<li class="branch">
+					<ul>
+						<li class="folder">css</li>
+						<li class="branch">
+							<ul>
+								<li class="css">reset.css</li>
+								<li class="css">styles.css</li>
+							</ul>
+						</li>
+						<li class="folder">fonts</li>
+						<li class="branch">
+							<ul>
+								<li class="font">font.eot</li>
+								<li class="unknown">font.svg</li>
+								<li class="unknown">font.ttf</li>
+								<li class="unknown">font.woff</li>
+							</ul>
+						</li>
+
+						<li class="folder">img</li>
+						<li class="branch">
+							<ul>
+								<li class="png">sprite.png</li>
+							</ul>
+						</li>
+						<li class="folder">js</li>
+						<li class="branch">
+							<ul>
+								<li class="folder">libs</li>
+								<li class="branch">
+									<ul>
+										<li class="js">jquery.js</li>
+										<li class="js">jquery-ui.js</li>
+									</ul>
+								</li>
+								<li class="js">scripts.js</li>
+							</ul>
+						</li>
+						<li class="folder">sass</li>
+						<li class="branch">
+							<ul>
+								<li class="unknown">styles.scss</li>
+							</ul>
+						</li>
+						<li class="folder">templates</li>
+						<li class="branch">
+							<ul>
+								<li class="html">template.html</li>
+							</ul>
+						</li>
+						<li class="html">index.html</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- Complex structures -->
+		<div class="wrap main left">
+			<h2>"Complex" Structures</h2>
+			<p>Large projects that depend heavily on front/back-end interactions</p>
+			<ul>
+				<li class="folder"><b>Project Name</b></li>
+				<li class="branch">
+					<ul>
+						<li class="folder">[...]</li>
+						<li class="folder">resources/public [<a href="#">-</a>]</li>
+						<li class="branch">
+							<ul>
+								<li class="folder">css</li>
+								<li class="branch">
+									<ul>
+										<li class="css">reset.css</li>
+										<li class="css">styles.css</li>
+									</ul>
+								</li>
+								<li class="folder">fonts</li>
+								<li class="branch">
+									<ul>
+										<li class="font">font.eot</li>
+										<li class="unknown">font.svg</li>
+										<li class="unknown">font.ttf</li>
+										<li class="unknown">font.woff</li>
+									</ul>
+								</li>
+
+								<li class="folder">img</li>
+								<li class="branch">
+									<ul>
+										<li class="png">sprite.png</li>
+										<li class="png">[...].png</li>
+									</ul>
+								</li>
+								<li class="folder">js</li>
+								<li class="branch">
+									<ul>
+										<li class="folder">libs</li>
+										<li class="branch">
+											<ul>
+												<li class="js">jquery.js</li>
+												<li class="js">jquery-ui.js</li>
+											</ul>
+										</li>
+										<li class="folder">viewA</li>
+										<li class="branch">
+											<ul>
+												<li class="js">[...].js</li>
+											</ul>
+										</li>
+										<li class="folder">viewB</li>
+										<li class="branch">
+											<ul>
+												<li class="js">[...].js</li>
+											</ul>
+										</li>
+										<li class="js">scripts.js</li>
+									</ul>
+								</li>
+								<li class="folder">sass</li>
+								<li class="branch">
+									<ul>
+										<li class="unknown">styles.scss</li>
+									</ul>
+								</li>
+								<li class="folder">templates</li>
+								<li class="branch">
+									<ul>
+										<li class="folder">viewA</li>
+										<li class="branch">
+											<ul>
+												<li class="html">[...].html</li>
+											</ul>
+										</li>
+										<li class="folder">viewB</li>
+										<li class="branch">
+											<ul>
+												<li class="html">[...].html</li>
+											</ul>
+										</li>
+										<li class="html">template.html</li>
+									</ul>
+								</li>
+								<li class="html">index.html</li>
+							</ul>
+						</li>
+						<li class="folder">test-js [<a href="#">-</a>]</li>
+						<li class="branch">
+							<ul>
+								<li class="folder">lib</li>
+								<li class="branch">
+									<ul>
+										<li class="css">jasmine.css</li>
+										<li class="js">jasmine.js</li>
+										<li class="js">jasmine-html.js</li>
+									</ul>
+								</li>
+								<li class="folder">spec</li>
+								<li class="branch">
+									<ul>
+										<li class="js">TestFiles.js</li>
+									</ul>
+								</li>
+								<li class="html">SpecRunner.html</li>
+							</ul>
+						</li>
+						<li class="folder">[...]</li>
+					</ul>
+				</li>
+			</ul>
+	</div>
+</body>
+</html>

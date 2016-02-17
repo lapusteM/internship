@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Session 7 - jQuery UI &amp; Design Patterns</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<link href="css/impress-demo.css" rel="stylesheet" />
+		<link href="css/desert.css" rel="stylesheet" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/prettify.js"></script>
+		
+		<style type="text/css">
+		  pre { font-size: 60%; line-height: 22px; font-family: Courier; }
+		  p.small { font-size: 70%; }
+		  .red { color: crimson; }
+		  q.small { margin-top: 50px; }
+		  q.smallest { margin-top: 0; }
+		</style>
+	</head>
+
+	<body class="impress-not-supported">
+
+		<div class="fallback-message">
+			<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+			<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+		</div>
+
+		<div id="impress">
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 7: jQuery UI &amp; Design Patterns &mdash;</center></p>
+				<br /><br />
+				<p>Topics:</p>
+				<p>$. Introduction to jQuery UI</p>
+				<p>$. Design patterns</p>
+				<br /><br />
+				<p>Think twice, code once!</p>
+				<p class="small">Radu B. Gaspar</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>jQuery UI</b></p><br />
+				<p>It's a curated set of user <span class="red">interface interactions</span>, <span class="red">effects</span>, <span class="red">widgets</span>, and <span class="red">themes</span> built on top of the jQuery JavaScript Library. </p><br />
+				<p><b>Interface interactions?</b> Yes, jQuery UI allows items to be:</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Draggable</span> - elements can be moved using the mouse</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Droppable</span> - create targets for draggable elements</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Resizable</span> - size an element using the mouse</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Selectable</span> - select individual or grouped elements</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Sortable</span> - reorder elements in a list/grid using the mouse</p><br />
+				<p>The jQuery UI homepage is packed with <a class="red" href="http://jqueryui.com/demos/" target="_blank">demos</a> showing the various <span class="red">interface interactions</span> along with <span class="red">multiple settings that can be applied</span> to them for a more complete experience.</p>
+			</div>
+
+			<div class="step slide">
+				<p>jQuery UI doesn't fall short when it comes to <span class="red">widgets</span> as well. If you ever need a reliable datepicker or menu, jQuery UI is the place to look for it.</p><br />
+				<p><b>What types of widgets does it have?</b> It comes with:</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Accordion</span> - collapsible content panels</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Autocomplete</span> - quick find from a pre-populated list</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Button</span> - enhances standard form elements like buttons</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Datepicker</span> - select a date from a popup/inline calendar</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Dialog</span> - open content in an interactive overlay</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Menu</span> - themeable with mouse/keyboard interactions</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Progressbar</span> - display status of a process</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Slider</span> - drag a handle to select a numeric value</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Spinner</span> - enhance text inputs for entering numeric values</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Tabs</span> - single content area with multiple panels</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Tooltip</span> - customizable, themeable</p><br />
+				<p>That's quite a few widgets!</p>
+			</div>
+			
+			<div class="step slide">
+				<p><b>Effects</b> are another big part of jQuery UI</p><br />
+				<p>The ones that are supported out of the box:</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Add Class</span> - adds class(es) while animating changes</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Color Animation</span> - animate the properties between colors</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Effect</span> - apply a predefined animation effect to elements</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Hide</span> - hide elements using custom effects</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Remove Class</span> - removes classes while animating changes</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Show</span> - display elements using custom effects</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Switch Class</span> - add/remove class(es) + animation</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Toggle</span> - display/hide elements using custom effects</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Toggle Class</span> - toggle class(es) + animation</p><br />
+				<p>These effects are quite powerful and they contain a wide range of predefined animations.</p><br />
+				<p>All of the demos come with a sample of the code that was used.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>Theming in jQuery UI</b></p><br />
+				<p>There's also the jQuery UI <a class="red" href="http://jqueryui.com/themeroller/" target="_blank">Theme Roller</a> which can be used to create custom jQuery UI theme with ease, <span class="red">on the fly</span>, with <span class="red">live preview</span> of the settings you're applying.</p><br />
+				<p><b>Once a theme is created, you can download the whole thing an apply it to your project.</b></p><br />
+				<p>There are also quite a few predefined themes to choose from in the <span class="red">Theme Roller Gallery</span>.</p><br />
+				<p>Whether you use a predefined theme or create your own, jQuery UI makes the process fast and painless.</p><br />
+				<p>There's also an <a class="red" href="http://api.jqueryui.com/" target="_blank">API</a> available if you need documentation.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>JavaScript Design Patterns</b></p><br />
+				<p>We'll try to cover a few of them:</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Constructor Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Module Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Revealing Module Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Singleton Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Observer Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Mediator Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Prototype Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Command Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Facade Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Factory Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Mixin Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Decorator Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Flyweight Pattern</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>Is that all of them?</b> Well, to be fair, no. There are actually quite a few more:</p><br />
+				<p>If we classify them by the <span class="red">MV* patterns</span> we also have:</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;MVC Pattern (model-view-controller)</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;MVP Pattern (model-view-presenter)</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;MVVM Pattern (model-view-viewModel)</p><br />
+				<p>If we take into account the <span class="red">modern modular JavaScript patterns</span> we also have:</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;AMD</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;CommonJS</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ES Harmony</p><br />
+			</div>
+
+			<div class="step slide">
+				<p>We also have to mention that <span class="red">we can work with design patterns in jQuery</span>... taking those into account we must also include:</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Composite Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Adapter Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Facade Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Observer Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Iterator Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Lazy Initialization Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Proxy Pattern</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Builder Pattern</p><br />
+				<p><b>So we've successfully enumerated over 20 design patterns.</b> Like all things, the easiest way to learn it, is to (first of all) understand it.</p><br />
+				<p><span class="red">Not all design patterns will be applicable to your project.</span></p>
+			</div>
+
+			<div class="step slide">
+				<p><b>The best part is that you already know a few!</b> We've talked about some already.</p><br />
+				<p><b><span class="red">The Constructor Pattern</span></b></p><br />
+				<p>A <span class="red">constructor</span> can be defined as a <span class="red">special method used to initialize a newly created object</span>. As we know, in JavaScript, almost everything is an object.</p><br />
+				<p>We can create an object through one of these 3 methods:</p>
+<pre class="prettyprint lang-js">
+var obj = {}; 
+// or
+var obj = Object.create(null); 
+// or
+var obj = new Object(); // this is an object constructor
+</pre><br />
+				<p>There are 4 ways in which we can assign keys and values to an object</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+// compatible with ECMAScript 3
+// 1. using the dot syntax
+obj.myKey = "Hello World"; // seting a property
+var key = obj.myKey; // getting a property
+
+// 2. using the square bracket syntax
+obj["myKey"] = "Hello World"; // seting a property
+var key = obj["myKey"]; // getting a property
+
+// compatible with ECMAScript 5
+// 3. using the Object.defineProperty method
+Object.defineProperty(obj, "myKey", value); // seting a property
+
+// 4. using the Object.defineProperties method
+Object.defineProperties(obj, { // seting multiple properties
+  "myKey": value, 
+  "anotherKey": ["value"]
+});
+</pre><br />
+				<p>We already covered constructors in Session 2 when we created our <span class="red">Car</span> Class... let's see another example of a Car class in action.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+function Car(model, year, miles) {
+  this.model = model;
+  this.year = year;
+  this.miles = miles;
+}
+
+Car.prototype.details = function () {
+  return this.model + " has traveled " + this.miles + " miles";
+};
+
+// usage:
+var honda = new Car("Honda", 2009, 10000);
+var bugatti = new Car("Bugatti", 2010, 5000);
+
+console.log(honda.details(), bugatti.details());
+</pre><br />
+				<p>We already talked about the <span class="red">Constructor Pattern</span>, we just didn't reffer to it as such.</p><br />
+				<p>One <b>design pattern</b> down, a few more to go...</p>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Module Pattern</span></b></p><br />
+				<p>This pattern is based in part on object literals, which as we know, don't require instantiation using the <span class="red">new</span> operator.</p>
+<pre class="prettyprint lang-js">
+var myModule = {
+    property: "value",
+
+    // object literals can contain properties and methods.
+    config: {
+        useCaching: true,
+        language: "en"
+    },
+
+    init: function() {},
+    setConfig: function(obj) {
+        if(typeof obj === "object") {
+            this.config = obj;
+    	}
+    }
+};
+
+myModule.init();
+myModule.setConfig({
+  language: "jp",
+  useCaching: false
+});
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><span class="red">The Module Pattern</span> can be used to create both private and public encapsulation for classes. Let's see an example of a <span class="red">self-contained module</span>:</p>
+<pre class="prettyprint lang-js">
+var counterModule = (function() {
+    var counter = 0;
+    return {
+        increment: function() {
+            return counter++;
+        },
+
+        reset: function() {
+            counter = 0;
+        }
+    };
+}());
+
+// usage:
+counterModule.increment();
+counterModule.reset();
+</pre><br />
+				<p>Your module can be as complex as you want/need it to be... it's in fact a simple SEAF or IIFE. <span class="red">We can pass parameters to our module to make use of other modules or libraries</span>.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Revealing Module Pattern</span></b></p><br />
+				<p>It's a slightly improved version or the Module Pattern and it implies that <span class="red">we define all of our functions and variables in the private scope</span> and <span class="red">return an anonymous object with pointers to the private functionality</span> we wished to reveal as public.</p>
+<pre class="prettyprint lang-js">
+var myRevealingModule = function() {
+    var privateVar = "Mark Titus",
+        publicVar  = "Hello there!";
+
+    function privateFunction() { console.log("Name:" + privateVar); }
+    function publicSetName(strName) { privateVar = strName; }
+    function publicGetName() { privateFunction(); }
+
+    // reveal public pointers to private functions and properties
+    return {
+        setName: publicSetName,
+        greeting: publicVar,
+        getName: publicGetName
+    };
+}();
+
+myRevealingModule.setName("John Doe");
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Singleton Pattern</span></b></p><br />
+				<p>It restricts instantiation of a class to a single object. That sounds awfully similar to what a <span class="red">static class</span> does.</p><br />
+				<p>Singletons differ from static classes (or objects) as we can delay their initialization, generally because they require some information that may not be available during initialization time.</p><br />
+				<p>In JavaScript, Singletons serve as a <span class="red">shared resource namespace</span> which isolate implementation code from the global namespace.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+var mySingleton = (function() {
+    // instance stores a reference to the Singleton
+    var instance;
+    function init() {
+        // singleton
+        // private methods and variables
+        function privateMethod(){ console.log("I am private"); }
+        var privateVariable = "Im also private";
+        var privateRandomNumber = Math.random();
+        return {
+            // public methods and variables
+            publicMethod: function () { console.log("The am public!"); },
+            publicProperty: "I am also public",
+            getRandomNumber: function() { return privateRandomNumber; }
+        };
+    };
+    return {
+        // get the Singleton instance if it exists or create it if it doesn't
+        getInstance: function () {
+            if (!instance) { instance = init(); }
+            return instance;
+        }
+    };
+}());
+
+// usage
+var singleA = mySingleton.getInstance();
+var singleB = mySingleton.getInstance();
+console.log(singleA.getRandomNumber() === singleB.getRandomNumber()); // true
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>In practice, the Singleton pattern is useful when exactly <span class="red">one object is needed to coordinate others across a system</span>.</p><br />
+				<p>They're often an indication that modules in a system are either tightly coupled or that logic is overly spread across multiple parts of a codebase.</p><br />
+				<p><b>Singletons can increase tight coupling!</b></p>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Observer Pattern</span></b></p><br />
+				<p>The Observer is a design pattern where an an object, known as a subject, maintains a list of objects depending on it (observers), automatically notifying them of any changes to state.</p><br />
+				<p>When a subject needs to notify observers, it broadcasts a notification (which can include notification data)</p><br />
+				<p>The subject can remove an observer from the list of observers.</p><br />
+				<p>This pattern can be broken down into several components:</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Subject</span> - keeps a list of/adds/removes observers</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">Observer</span> - provides a update interface for objects that need to be notified of a Subject's state change</p>
+			</div>
+
+			<div class="step slide">
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">ConcreteSubject</span> - broadcasts notifications to observers on changes of state, stores the state of ConcreteObservers.</p>
+				<p>&nbsp;&nbsp;-&nbsp;<span class="red">ConcreteObserver</span> - stores a reference to the ConcreteSubject, implements an update interface for the Observer to ensure state is consistent with the Subject's</p><br />
+				<p>How would this look?</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+function ObserverList() {
+  this.observerList = [];
+}
+ObserverList.prototype.Add = function(obj) {
+  return this.observerList.push(obj);
+};
+ObserverList.prototype.Empty = function() {
+  this.observerList = [];
+};
+ObserverList.prototype.Count = function() {
+  return this.observerList.length;
+};
+ObserverList.prototype.Get = function(index) {
+  if(index > -1 &amp;&amp; index &lt; this.observerList.length) {
+    return this.observerList[index];
+  }
+};
+ObserverList.prototype.Insert = function(obj, index) {
+  var pointer = -1;
+  if(index === 0) {
+    this.observerList.unshift(obj);
+    pointer = index;
+  } else if(index === this.observerList.length) {
+    this.observerList.push(obj);
+    pointer = index;
+  }
+
+  return pointer;
+};
+</pre>				
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+ObserverList.prototype.IndexOf = function(obj, startIndex) {
+  var i = startIndex, pointer = -1;
+  while(i &lt; this.observerList.length) {
+    if(this.observerList[i] === obj) {
+      pointer = i;
+    }
+    i++;
+  }
+
+  return pointer;
+};
+ObserverList.prototype.RemoveAt = function(index) {
+  if(index === 0){
+    this.observerList.shift();
+  } else if(index === this.observerList.length -1) {
+    this.observerList.pop();
+  }
+};
+// Extend an object with an extension
+function extend(extension, obj) {
+  for(var key in extension) {
+    obj[key] = extension[key];
+  }
+}
+</pre><br />
+				<p>Next, let's model the Subject and the ability to add, remove or notify observers on the observer list.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+function Subject() {
+  this.observers = new ObserverList();
+}
+Subject.prototype.AddObserver = function(observer) {
+  this.observers.Add(observer);
+};
+Subject.prototype.RemoveObserver = function(observer) {
+  this.observers.RemoveAt(this.observers.IndexOf(observer, 0));
+};
+Subject.prototype.Notify = function(context) {
+  var observerCount = this.observers.Count();
+  for(var i=0; i &lt; observerCount; i++) {
+    this.observers.Get(i).Update(context);
+  }
+};
+</pre><br />
+				<p>This pattern is sometimes confused with the <span class="red">Publish / Subscribe Pattern</span> which is very similar.</p><br />
+				<p>The difference however is that the Publish / Subscribe Pattern uses a topic/event channel which sits between the objects wishing to receive notifications (subscribers) and the object firing the event (the publisher).</p>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Mediator Pattern</span></b></p><br />
+				<p>The dictionary refers to a mediator as a <span class="red">neutral party that assists in negotiations and conflict resolution</span>.</p><br />
+				<p>In our case, a mediator is a behavioral design pattern that allows us to expose a unified interface through which the different parts of a system may communicate.</p>
+<pre class="prettyprint lang-js">
+// basic mediator implementation
+var mediator = (function() {
+    // storage for topics that can be broadcast or listened to
+    var topics = {};
+
+    // subscribe to a topic, supply a callback to be executed
+    // when that topic is broadcast
+    var subscribe = function(topic, fn) {
+        if (!topics[topic]) { 
+          topics[topic] = [];
+        }
+        topics[topic].push({ context: this, callback: fn });
+
+        return this;
+    };
+</pre>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+    // publish/broadcast an event to the rest of the application
+    var publish = function(topic) {
+        var args;
+        if (!topics[topic]) {
+          return false;
+        } 
+
+        args = Array.prototype.slice.call(arguments, 1);
+        for (var i = 0, l = topics[topic].length; i &lt; l; i++) {
+            var subscription = topics[topic][i];
+            subscription.callback.apply(subscription.context, args);
+        }
+        return this;
+    };
+
+    return {
+        publish: publish,
+        subscribe: subscribe,
+        installTo: function(obj) {
+            obj.subscribe = subscribe;
+            obj.publish = publish;
+        }
+    };
+}()); // end of mediator
+</pre><br />
+				<p>There's a bit of overlap between the Mediator and Observer patterns.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Both Mediators and Observers promote loose coupling, however, the Mediator achieves this by having objects communicate strictly through the Mediator.</p><br />
+				<p>The Observer pattern creates observable objects which publish events of interest to objects which are subscribed to them.</p><br />
+				<p><b><span class="red">The Prototype Pattern</span></b></p><br />
+				<p>It creates objects based on a template of an existing object through cloning. This pattern is based on prototypal inheritance.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+// basic prototype pattern
+// using ECMAScript 5 Object.create
+var myCar = {
+  name: "Ford Escort",
+  drive: function() {
+    console.log("Weeee. I'm driving!");
+  },
+  panic: function() {
+    console.log("Wait. How do you stop this thing?");
+  }
+};
+
+// use Object.create to instantiate a new car
+var yourCar = Object.create(myCar);
+
+// now we can see that one is a prototype of the other
+console.log(yourCar.name);
+</pre><br />
+				<p>There are implementations for this if we need to use the Prototype Pattern while basing our code according to the ECMAScript 3 guidelines.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Command Pattern</span></b></p><br />
+				<p>The general idea behind the Command pattern is that it provides a means for us to separate the responsibilities of <span class="red">issuing commands from anything executing commands</span>, delegating this responsibility to different objects instead.</p><br />
+<pre class="prettyprint lang-js">
+(function() {
+  var CarManager = {
+    // request information
+    requestInfo: function(model, id) {
+      return "The information for " + model + " with ID " + id + " is foo";
+    },
+    // purchase the car
+    buyVehicle: function(model, id) {
+      return "You have successfully purchased Item " + id + ", a " + model;
+    },
+    // arrange a viewing
+    arrangeViewing: function(model, id) {
+      return "Successfully booked viewing of " + model + " ( " + id + " ) ";
+    }
+  };
+}());
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>Tt would be trivial to invoke our <span class="red">CarManager</span> methods by directly accessing the object.</p><br />
+				<p>There are however scenarios where this may be disadvantageous.</p><br />
+				<p>Imagine if the core API behind the <span class="red">CarManager</span> changed. This would require all objects directly accessing these methods within our application to also be modified.</p><br />
+				<p>Let's expand on our <span class="red">CarManager</span> so that our application of the Command pattern results in the following: <b>accept any named methods that can be performed on the <span class="red">CarManager</span> object, passing along any data that might be used such as the Car model and ID</b>.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Here is what we would like to be able to achieve:</p>
+<pre class="prettyprint lang-js">
+CarManager.execute("buyVehicle", "Ford Escort", "453543");
+</pre><br />
+				<p>Let's now define the <span class="red">execute</span> method:</p>
+<pre class="prettyprint lang-js">
+CarManager.execute = function (name) {
+    return CarManager[name] &amp;&amp; CarManager[name].apply(
+      CarManager, [].slice.call(arguments, 1)
+    );
+};
+</pre><br />
+				<p>Our final sample calls would thus look as follows:</p>
+<pre class="prettyprint lang-js">
+CarManager.execute("arrangeViewing", "Ferrari", "14523");
+CarManager.execute("requestInfo", "Ford Mondeo", "54323");
+CarManager.execute("requestInfo", "Ford Escort", "34232");
+CarManager.execute("buyVehicle", "Ford Escort", "34232");
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Facade Pattern</span></b></p><br />
+				<p>When we put up a facade, we present an outward appearance to the world which may conceal a very different reality.</p><br />
+				<p>This pattern provides a convenient higher-level interface to a larger body of code, hiding its true underlying complexity.</p><br />
+				<p>The jQuery JavaScript library uses the Facade Pattern in its implementation.</p><br />
+				<p>We're going to utilizing a Facade to simplify an interface for listening to events cross-browser.</p>
+			</div>
+
+			<div class="step slide">
+				<p>We do this by creating a common method that can be used in one’s code which does the task of checking for the existence of features so that it can provide a safe and cross-browser compatible solution.</p><br />
+<pre class="prettyprint lang-js">
+// basic facade example
+var addMyEvent = function(el, ev, fn) {
+   if(el.addEventListener) {
+      el.addEventListener(ev, fn, false);
+   } else if(el.attachEvent) {
+      el.attachEvent("on" + ev, fn);
+    } else {
+      el["on" + ev] = fn;
+    }
+};
+</pre><br />
+				<p>Facades generally have few disadvantages, but one concern worth noting is performance.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Factory Pattern</span></b></p><br />
+				<p>The Factory pattern is another creational pattern concerned with the notion of creating objects.</p><br />
+				<p>Where it differs from the other patterns in its category is that it doesn't explicitly require us use a constructor.</p><br />
+				<p>Instead, a Factory can provide a generic interface for creating objects, where we can specify the type of factory object we wish to be created.</p><br />
+				<p>This pattern can be found in UI libraries such as ExtJS.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+// let's assume we have two vehicle classes: Car and Truck
+// a constructor for defining new cars
+function Car(options) {
+  // some defaults
+  this.doors = options.doors || 4;
+  this.state = options.state || "brand new";
+  this.color = options.color || "silver";
+
+}
+
+// a constructor for defining new trucks
+function Truck(options) {
+  this.state = options.state || "used";
+  this.wheelSize = options.wheelSize || "large";
+  this.color = options.color || "blue";
+}
+</pre><br />
+				<p>Let's see how a factory would look using these two class: <span class="red">Car</span> and <span class="red">Truck</span>.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+// define a skeleton vehicle factory
+function VehicleFactory() {}
+
+// the default vehicleClass is Car
+VehicleFactory.prototype.vehicleClass = Car;
+
+// the Factory method for creating new Vehicle instances
+VehicleFactory.prototype.createVehicle = function (options) {
+  if(options.vehicleType === "car") {
+    this.vehicleClass = Car;
+  } else {
+    this.vehicleClass = Truck;
+  }
+
+  return new this.vehicleClass(options);
+};
+
+// usage: create an instance of our factory that makes cars
+var carFactory = new VehicleFactory();
+var car = carFactory.createVehicle({ 
+    vehicleType: "car", 
+    color: "yellow", 
+    doors: 6
+});
+
+// test to confirm our car was created using the vehicleClass/prototype Car
+console.log(car instanceof Car); // true
+console.log(car); // Car object
+</pre>				
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Mixin Pattern</span></b></p>
+				<p>Mixins are classes which offer functionality that can be easily inherited by a sub-class or group of sub-classes for the purpose of function re-use.</p>
+				<p><span class="red">We already know this one from Session 2:</span></p>
+<pre class="prettyprint lang-js">
+var Person = function(firstName , lastName) {
+    this.firstName = firstName;
+    this.lastName =  lastName;
+    this.gender = "male";
+};
+    
+// a new instance of Person can then easily be created as follows:
+var clark = new Person("Clark", "Kent");
+
+// define a subclass constructor for "SuperHero":
+// the "SuperHero" constructor creates an object which descends from "Person"
+var SuperHero = function(firstName, lastName, powers) {
+    Person.call(this, firstName, lastName);
+    
+    // finally, store their powers as an array of traits
+    // not found in a normal "Person"
+    this.powers = powers;
+};
+
+var superman = new SuperHero("Clark", "Kent" , ["flight", "heat-vision"]);
+console.log(superman);
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>In JavaScript, we can look at inheriting from Mixins as a means of collecting functionality through extension.</p><br />
+				<p>Mixins allow objects to borrow (or inherit) functionality from them with a minimal amount of complexity and they can basically be seen as objects with <span class="red">multiple inheritance</span>.</p><br />
+				<p>Imagine that we define a Mixin containing utility functions in a standard object literal as follows:</p>
+<pre class="prettyprint lang-js">
+var myMixins = {
+  moveUp: function() {
+    console.log("move up");
+  },
+  moveDown: function() {
+    console.log("move down");
+  },
+  stop: function() {
+    console.log("stop! hold your horses!");
+  }
+};
+</pre>
+				<p>We can then extend the prototype of existing constructor functions to include this behavior.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+// a skeleton carAnimator constructor
+function carAnimator() {
+  this.moveLeft = function() {
+    console.log("move left");
+  };
+}
+
+// a skeleton personAnimator constructor
+function personAnimator() {
+  this.moveRandomly = function() { /*..*/ };
+}
+
+// extend both constructors with our Mixin using Underscore.js
+_.extend(carAnimator.prototype, myMixins);
+_.extend(personAnimator.prototype, myMixins);
+
+// create a new instance of carAnimator
+var myAnimator = new carAnimator();
+myAnimator.moveLeft();
+myAnimator.moveDown();
+myAnimator.stop();
+</pre>				
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">The Decorator Pattern</span></b></p><br />
+				<p>Decorators are a structural design pattern that aim to promote code re-use. Similar to Mixins, they can be considered another viable alternative to object sub-classing.</p><br />
+				<p>Classically, Decorators offered the ability to add behaviour to existing classes in a system dynamically. </p><br />
+				<p>The Decorator pattern isn't heavily tied to how objects are created but instead focuses on the problem of extending their functionality.</p><br />
+				<p>We can easily use multiple decorators on our objects.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+// the constructor to decorate
+function MacBook() {
+  this.cost = function () { return 997; }; 
+  this.screenSize = function () { return 11.6; }; 
+} 
+// decorator 1
+function Memory(macbook) {
+  var v = macbook.cost(); 
+  macbook.cost = function() { return v + 75; };
+}
+// decorator 2
+function Engraving(macbook) {
+  var v = macbook.cost(); 
+  macbook.cost = function() { return  v + 200; };
+}
+ // decorator 3
+function Insurance(macbook) {
+  var v = macbook.cost(); 
+  macbook.cost = function() { return  v + 250; };
+}
+
+var mb = new MacBook(); 
+Memory(mb); 
+Engraving(mb);
+Insurance(mb);
+
+console.log(mb.cost()); // 1522
+console.log(mb.screenSize()); // 11.6 
+
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><b><span class="red">Flyweight</span></b></p><br />
+				<p>The Flyweight pattern is a classical structural solution for optimizing code that is repetitive, slow and inefficiently shares data.</p><br />
+				<p>It aims to minimize the use of memory in an application by sharing as much data as possible with related objects.</p><br />
+				<p>In practice, Flyweight data sharing can involve taking several similar objects or data constructs used by a number of objects and placing this data into a single external object.</p><br />
+				<p>The Flyweight pattern isn't heavily used in JavaScript.</p><br />
+				<p><a class="red" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">Presentation is based on the "Learning JavaScript Design Patterns" book by Addy Osmani</a>.</p>
+			</div>
+
+			<div class="step slide">
+				<p>The book contains a great deal more on Design Patterns, their advantages and disadvantages, when you should and shoudn't apply specific design patterns and multiple approaches to using them.</p><br />
+				<p>It's also well written and easy to grasp without having knowledge of design patterns beforehand.</p><br />
+				<p><b>For a complete understanding of design patterns, I highly recommend you <a class="red" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">read it</a>!</b></p>
+			</div>
+
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 7: jQuery UI &amp; Design Patterns &mdash;</center></p>
+				<q><center>Thank You!</center></q>
+			</div>
+
+			<div class="step slide">
+				<q><center>Session 8: D.R.Y. &amp; REST</center></q>
+				<p><center>Next <span class="red">Thursday, 5/December/2013</span></center></p>
+				<p><center>from <span class="red">9-10</span> and <span class="red">17-18</span></center></p>
+			</div>
+		</div>
+		<script src="js/impress.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>	

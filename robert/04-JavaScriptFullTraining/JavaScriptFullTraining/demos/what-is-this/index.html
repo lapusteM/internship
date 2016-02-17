@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>What is "this"</title>
+		<style type="text/css">
+			* { margin: 0; padding: 0; font-family: Verdana, Arial; font-size: 14px; }
+			body { background: #666; }
+			pre { font-size: 130%; }
+			.main {
+				padding: 10px;
+				width: 900px;
+				border-width: 1px 3px 1px 3px;
+				border-color: #222;
+				border-style: solid;
+				min-height: 100px;
+				margin: 20px auto;
+				background: #e3e3e3;
+			}
+			input { padding: 5px; width: 180px; text-align: center; }
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<link href="../../css/desert.css" rel="stylesheet" />
+		<script src="../../js/prettify.js"></script>
+	</head>
+	<body>
+		<div class="main">
+<pre id="code" class="prettyprint lang-js">
+alert(this); // window
+
+var obj = {
+    run: function() {
+        showThis(this); // normally the "obj" object
+    },
+    doGet: function() {
+        $.get("#", function(data) {
+            showThis(this); // the request object
+        });
+    }
+};
+
+$(".madness").on("click", function() {
+    showThis(this); // the element that was clicked (input)
+    obj.run();
+    obj.run.call("&lt;div&gt;custom this&lt;/div&gt;");
+    obj.run.call({another: "object"});
+    obj.run.call([1, 2, 3, 4, 5, 6]);
+    obj.run.apply(["a", "b", "c", "d"]);
+    obj.run.apply(50);
+    obj.run.apply("50");
+    obj.doGet();
+});
+
+function showThis(param) {
+    if(typeof param !== "object") return;
+
+    if(param.outerHTML) {
+        alert(param.outerHTML);
+    } else {
+        var keys = [];
+        $.each(param, function(key, value) {
+             keys.push(key);
+        });
+        alert("this: " + JSON.stringify(param) + "\n\nkeys: " + keys.join(", "));
+    }
+}
+</pre><br />
+			<input class="madness" value="Let the Madness Begin" />
+		</div>
+		<script type="text/javascript">
+			prettyPrint();
+			eval($("#code").text());
+		</script>
+	</body>
+</html>

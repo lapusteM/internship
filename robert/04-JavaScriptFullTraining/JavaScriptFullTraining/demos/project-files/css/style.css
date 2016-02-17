@@ -1,0 +1,21 @@
+* { margin: 0; padding: 0; outline: 0 none; text-decoration: none; font-family: "Segoe UI"; font-size: 12px; list-style-type: none; list-style: none; }
+li { background: url("../img/sprite.png") no-repeat; min-height: 16px; padding-left: 20px; margin-bottom: 5px; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+li a { padding: 0 3px; display: inline-block; width: 6px; }
+h2 { font-size: 130%; margin-bottom: 5px; }
+h2 + p { margin-bottom: 20px; }
+
+.folder { background-position: 0 0; cursor: pointer; }
+.png { background-position: 0 -16px; }
+.jpg { background-position: 0 -32px; }
+.gif { background-position: 0 -48px; }
+.html { background-position: 0 -64px; }
+.css { background-position: 0 -80px; }
+.js { background-position: 0 -96px; }
+.txt { background-position: 0 -112px; }
+.unknown { background-position: 0 -128px; }
+.font { background-position: 0 -144px; }
+.branch { background: none; }
+
+.wrap { overflow: hidden; }
+.main { padding: 20px 20px 0 20px; border: 1px solid #777; margin: 5px 0 0 5px; }
+.left { float: left; }

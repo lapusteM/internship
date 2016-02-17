@@ -2,7 +2,6 @@
 
 @import 'variables';
 @import 'mixins';
-@import "custom-variables-bootstrap";
 
 // Core variables and mixins
 @import "bootstrap/less/variables.less";
@@ -55,6 +54,7 @@
 @import "bootstrap/less/utilities.less";
 @import "bootstrap/less/responsive-utilities.less";
 
+@import "custom-variables-bootstrap";
 
 
 html, body, div, span, object, iframe,
@@ -186,18 +186,24 @@ body {
                 height: 20%;
                 width: 40%;
                 margin: -10% auto 0 auto;
-                background-color: red;
+                background-color: black;
               }
+              #green{
+                  background-color: #87BD65;
+                }
+
+
           }
         }
     }
+
     .main-bottom{
       height: 200px;
         .second{
           height: 100%;
           .feature-left{
             height: 100%;
-            background-color: black;
+            background-color: #87BD65;
             margin-top: 8px;
             margin-bottom: 8px;
           }
@@ -223,9 +229,68 @@ body {
   height: 400px;
   background-color: @bodyBackground;
     .top-footer{
-      height: 20%;
+      height: 25%;
         .footer-green{
-          background-color: green;
+          background-color: #87BD65;
+          height: 100%;
         }
+        :nth-child(2){
+          border-left: 1px @spanColor solid;
+          border-right: 1px @spanColor solid;
+          background-color: #91CE6B;
+          .round{
+            background-color: #91CE6B;
+          }
+        }
+        .round{
+          height: 70px;
+          width: 70px;
+          margin: -8% auto 0 auto;
+          border-radius: 100%;
+          background-color: #87BD65;
+            .fa{
+              color: white;
+              font-size: 28px;
+              .center-middle;
+
+          }
+        }
+    }
+}
+.navi{
+  text-transform: uppercase;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+.navi-font {
+  font-size: 11px;
+  font-weight: 900;
+  padding: 0;
+}
+.navbar-brand{
+  img{
+    height: 80px;
+    margin: 0;
+    padding: 0;
+  }
+}
+.navi-height{
+  margin-top: 0;
+  padding: 0;
+  height: 100px;
+  margin-bottom: 0;
+}
+.navi2-font{
+  font-size: 15px;
+  font-weight: 900;
+
+}
+.border{
+  border: 2px solid black;
+    a{
+      color:black;
     }
 }

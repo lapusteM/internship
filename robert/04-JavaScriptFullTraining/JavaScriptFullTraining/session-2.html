@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Session 2 - Working Clean</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<link href="css/impress-demo.css" rel="stylesheet" />
+		<link href="css/desert.css" rel="stylesheet" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/prettify.js"></script>
+		
+		<style type="text/css">
+		  pre { font-size: 60%; line-height: 22px; font-family: Courier; }
+		  p.small { font-size: 70%; }
+		  .red { color: crimson; }
+		</style>
+	</head>
+
+	<body class="impress-not-supported">
+
+		<div class="fallback-message">
+			<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+			<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+		</div>
+
+		<div id="impress">
+
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 2: Working Clean &mdash;</center></p>
+				<br /><br />
+				<p>Topics:</p>
+				<p>$. JavaScript the OOP way: extensibility, maintainability and performance</p>
+				<p>$. Creating and using classes, protecting the global scope, using namespaces</p>
+				<br /><br />
+				<p>Think twice, code once!</p>
+				<p class="small">Radu B. Gaspar</p>
+			</div>
+
+			<div class="step slide">
+				<q><center>JavaScript the OOP way: extensibility, maintainability and performance</center></q>
+			</div>
+
+			<div class="step slide">
+				<p><center><b>Extensibility and Maintainability</b></center></p>
+				<br />
+				<p>Why is it so tough?</p>
+				<p class="small">JavaScript is a dynamic language, so there are a lot of ways of doing things.</p>
+				<br />
+				<p>How to do it?</p>
+				<p class="small">Namespaces, design patterns and documentation... your old best friends!</p>
+				<br />
+				<p>One of the keys to maintainable code of any kind, not just JS, is documentation and commenting. </p>
+				<br />
+				<p>Comments can serve to be invaluble for new developers coming into a project, in need of understanding.</p>
+				<br />
+				<p>Avoid the "Why did I write that one line again?" syndrome by using comments.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Documentation is not always required, but it should... make it part of your development process.</p>
+				<br />
+				<p>Asynchronous Module Definition (AMD) is a way of writing JavaScript code; it divides all code into separate modules. </p>
+				<br />
+				<p>The most popular implementation of AMD is <a class="red" href="http://requirejs.org/">RequireJS</a> which does this very well.</p>
+<pre class="prettyprint lang-js">
+// main.js
+require(['libs/jquery','app.js'], function ($, app) {
+    $(function () {
+        app.init();
+    });
+});
+</pre>
+				<br />
+				<p>File structure goes a long way to making the project maintainable and undestandable to all developers, reducing ramp-up time.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Design patterns are reusable solutions to commonly occuring problems in software design.</p>
+				<br />
+				<p>In short: someone already encountered and fixed your problem.</p>
+				<br />
+				<p>Among the design patterns that we can use in JavaScript are the following: <span class="red">Constructor Pattern</span>, <span class="red">Module Pattern</span>, <span class="red">Revealing Module Pattern</span>, <span class="red">Singleton Pattern</span>, <span class="red">Observer Pattern</span>, <span class="red">Mediator Pattern</span>, <span class="red">Prototype Pattern</span>, <span class="red">Command Pattern</span>, <span class="red">Facade Pattern</span>, <span class="red">Factory Pattern</span>, <span class="red">Mixin Pattern</span>, <span class="red">Decorator Pattern</span>, <span class="red">Flyweight Pattern</span>, <span class="red">MV* Patterns</span> and others.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>Performance: Tips</b><p><br />
+				<p>1. Define local variables</p>
+<pre class="prettyprint lang-js">
+// instead of this
+var content = document.getElementById('content');
+var sidebar = document.getElementById('content').getElementById('sidebar');
+
+// use this
+var content = document.getElementById('content'), // cached the selector
+    sidebar = content.getElementById('sidebar');
+</pre>
+				<br />
+				<p>2. Don't use the "with()" statement excessively</p>
+<pre class="prettyprint lang-js">
+// shorthand for writing recurring accesses to objects
+var aaa = { bbb: {} }, bing, bang;
+aaa.bbb.bing = true;
+aaa.bbb.bang = true;
+with (aaa.bbb) {
+    bing = false; // which 'bing' will get set?
+    bang = false; // which 'bang' will get set?
+} // can create confusion
+
+// use this instead
+var o = aaa.bbb;
+o.bing = true;
+o.bang = true;
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>3. Avoid switch statements</p>
+<pre class="prettyprint lang-js">
+// instead of this
+function doAction(action) {
+    switch (action) {
+        case 'hack':
+            return 'hack'; break;
+        case 'slash':
+            return 'slash'; break;
+        case 'run':
+            return 'run'; break;
+        default:
+            throw new Error('Invalid action.'); break;
+    } // might be possible to forget a "break" statement
+}
+
+// use this
+function doAction(action) {
+    var actions = {
+        'hack': function () { return 'hack'; }, //doHack
+        'slash': function () { return 'slash'; }, //doSlash
+        'run': function () { return 'run'; } //doRun
+    };
+    if (typeof actions[action] !== 'function') {
+        throw new Error('Invalid action.');
+    }
+
+    return actions[action]();
+} // around 3 times faster than a switch statement
+</pre>
+				
+			</div>
+
+			<div class="step slide">
+				<p>4. Don't append content inside for loops</p>
+<pre class="prettyprint lang-js">
+// rather than adding one element at a time
+for(...) {
+    document.appendChild(something);
+}
+
+// it's better to append a list of elements at once
+// this way the browser re-renders (reflow) only once
+var list;
+for(...) {
+    list += "some HTML string";
+}
+document.appendChild(list);
+</pre>
+				<br />
+				<p>5. Change classes not styles</p>
+				<p class="small">&nbsp;-&nbsp;this way the browser won't reflow as much</p>
+				<br />
+				<p>6. Don't clutter the global scope</p>
+				<p class="small">&nbsp;-&nbsp;use namespaces</p>
+				<br />
+				<p>7. Don't duplicated code</p>
+				<p class="small">&nbsp;-&nbsp;keep it D.R.Y.</p>
+			</div>
+
+			<div class="step slide">
+				<p>8. Watch out for event bubbling</p>
+				<p class="small">&nbsp;-&nbsp;events can be stacked</p>
+				<p class="small">&nbsp;-&nbsp;any event that was added, needs to be cleaned at some point</p>
+				<br />
+				<p>9. Don't use for-in loops to iterate over arrays</p>
+				<p class="small">&nbsp;-&nbsp;it takes more time</p>
+				<p class="small">&nbsp;-&nbsp;for-in should only be used to iterate through object properties</p>
+				<br />
+				<p>10. Avoid nesting too deep</p>
+				<p class="small">&nbsp;-&nbsp;general rule to any programming language</p>
+<pre class="prettyprint lang-js">
+function onSuccess(r) {
+    if (r) { // not recommended
+        if (r.data) {
+            if (r.data.myProp) {
+                // do something
+            } else {}
+        }
+    }
+
+    // if (!r || !r.data) return; // better
+    // if (r.data.myProp) { // do something }
+}
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>11. Avoid memory leaks and circular references</p>
+<pre class="prettyprint lang-js">
+// classic case for circular references
+function foo(e) {
+    $(e).on("click", function() {
+        // do something here
+    });
+}
+
+// break the cycle!
+function foo(e) {
+    $(e).on("click", doClick);
+}
+
+function doClick(event) {
+	
+} 
+</pre>
+				<br />
+				<p>12. String concatenation</p>
+<pre class="prettyprint lang-js">
+var foo = "some foo",
+    bar = " and some bar";
+
+foo += bar; // pretty ok
+foo = foo + bar; // better by small margin than "+=" in most browsers
+foo.concat(bar); // blazing fast +6200% faster than "+=" in some browsers
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<q><center>Creating and using classes, protecting the global scope, using namespaces</center></q>
+			</div>
+
+			<div class="step slide">
+				<p><center><b>Classes</b></center></p><br />
+				<p>Even if there are no classes in JavaScript, we can create instances of methods that behave like a class.</p><br />
+<pre class="prettyprint lang-js">
+(function(window) {
+    var Utils = function() { // Utils Class
+        this.text = {
+            extractFromParentheses: function(value) {
+                var match = value.match(/\(([^)]+)\)/),
+                    matchedValue = match && match[1];
+				
+                return matchedValue;
+            }
+        };
+    };
+	
+    window.Utils = new Utils();
+    // from this point forward, Utils behaves like a static class
+    // meaning it cannot be instantiated
+})(window);
+</pre>
+				<br />
+				<p>Any attempt to create another instance of Utils will result in a <span class="red">TypeError: object is not a function</span> error.</p>
+			</div>
+
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+// a simple Car class
+(function(window) {
+    var Car = function() {
+        // private variables
+        var doors = 5;
+        var wheels = 4;
+        var windows = 6;
+
+        // public variables
+        this.plate = "CJ06BBB";
+        this.state = "brand new";
+
+        // private methods
+        var doSomethingElse = function() {}
+		
+        // public methods
+        this.setDoors = function(value) { doors = value; }
+        this.getDoors = function() { return doors; }
+    }
+	
+    Car.prototype.startEngine = function() {
+        console.log(this.make + ' engine started!');
+    }
+	
+    Car.prototype.make = "Honda";
+	
+    window.Car = Car; // make the class available globally
+    // multiple instances of this class can now be created
+})(window);
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>The scope of our previous classes was the global scope, or window, but the scope can be changed to suit our needs.</p><br />
+				<p>We can even use the principle of sub-classing like so:</p>
+<pre class="prettyprint lang-js">
+var Person = function(firstName , lastName) {
+    this.firstName = firstName;
+    this.lastName =  lastName;
+    this.gender = "male";
+};
+    
+// a new instance of Person can then easily be created as follows:
+var clark = new Person("Clark", "Kent");
+
+// define a subclass constructor for "SuperHero":
+// the "SuperHero" constructor creates an object which descends from "Person"
+var SuperHero = function(firstName, lastName, powers) {
+    Person.call(this, firstName, lastName);
+    
+    // finally, store their powers as an array of traits
+    // not found in a normal "Person"
+    this.powers = powers;
+};
+
+var superman = new SuperHero("Clark", "Kent" , ["flight", "heat-vision"]);
+console.log(superman);
+</pre>
+			</div>
+
+			<div class="step slide">
+				<q><center>More about Classes and Design Patterns in Session 7.</center></q>
+			</div>
+
+			<div class="step slide">
+				<p><center><b>Global Scope</b></center></p><br />
+<pre class="prettyprint lang-js">
+var g = 20; // global variable (in global scope)
+function doSomething() { // global function (in global scope)
+    // local variable accessible in the "doSomething" function ONLY
+    var loc = 10;
+    // local function accessible in the "doSomething" function ONLY
+    function test() {}
+}
+</pre>
+				<br />
+				<p>Anything declared within the global scope <span class="red">is globally accessible</span>. You can access that method or property from anywhere in your application.</p><br />
+				<p>This presents a bad application construct, not all pieces of logic need to be aware of each other, furthermore the global scope becomes a problem when we need to block access to certain methods or variables. Not to mention we're filling the global scope with unnecessary data.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Having any state globally can cause that state to be corrupted.</p><br />
+				<p>Perhaps the most important thing you can do to improve the performance of your scripts is to be wary of global lookups.</p><br />
+				<p>Global variables and functions are always more expensive to use than local ones because they involve a scope chain lookup.</p><br />
+				<p class="red">Minimising the use of global variables is a pattern!</p><br />
+				<p><b>Q: How to avoid polluting the global scope?</b></p>
+				<p>A: By using namespace.</p>
+			</div>
+
+			<div class="step slide">
+				<p><center><b>Namespacing</b></center></p><br />
+				<p>Can be defined as a logical grouping of units of code under a unique identifier.</p><br />
+				<p>Namespaces help to avoid collisions with other objects or variables in the global namespace. (window)</p><br />
+				<p>Namespacing helps with organizing blocks of functionality for easy referencing and usage.</p><br />
+				<p>JavaScript doesn't have built-in support for namespaces but objects and closures can be used to achieve a similar effect.</p>
+			</div>
+
+			<div class="step slide">
+				<p><center><b>Namespacing Patterns</b></center></p><br />
+				<p>1. Single global variable</p>
+<pre class="prettyprint lang-js">
+var someApplication = (function() {
+    function init(){
+        alert("initialized application");
+    }
+    return {
+        init: init
+    }
+})(); // S.E.A.F.(self executing anonymous function)
+</pre>
+				<br />
+				<p>With this approach, we can return an object that contains functions and properties that are contained within the "someApplication" scope.</p><br />
+				<p>The problem is making sure that no one else used the same variable name as we did in the page.</p>
+			</div>
+
+			<div class="step slide">
+				<p>2. Prefix namespacing</p>
+<pre class="prettyprint lang-js">
+var someApplication_propertyA = {};
+var someApplication_propertyB = {};
+function someApplication_someMethod() { 
+    // ...
+}
+</pre>
+				<br />
+				<p>By using this approach we decrease the chances or a particular variable existing in the global scope.</p><br />
+				<p>The biggest problem is that we're creating a large number of global objects, and there's a heavy reliance on our prefix not being used by other developers in the global namespace.</p><br />
+				<p>Overall not the best approach for large projects.</p>
+			</div>
+
+			<div class="step slide">
+				<p>3. Object literal notation</p>
+<pre class="prettyprint lang-js">
+var someApplication = {
+    init: function() { 
+        // ...
+    },
+    models: {},
+    views: {
+        pages: {}
+    },
+    collections: {}
+};
+</pre>
+				<br />
+				<p>The scope is now an object so we can add properties and methods at our convenience.</p>
+<pre class="prettyprint lang-js">
+someApplication.foo = function() {
+    return "bar";
+};
+
+someApplication.utils = {
+    sum: function(a, b) {
+        return a+b;
+    },
+    dif: function(a, b) {
+        return a-b;
+    }
+};
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>The "Object literal notation" pattern is nothing more than an object containing a collection of "key[value]" pairs which can hold primitives, references to other methods, functions and even other namespaces.</p><br />
+				<p>One of the major advantages of this pattern is that it doesn't pollute the global scope and maintains an organized code.</p><br />
+				<p><b>Possibility of conflicts or overwrites?</b> Not really, that can be prevented easily, like this:</p><br />
+<pre class="prettyprint lang-js">
+// check if namespace exists and use it if it does
+// otherwise create the namespace
+someApplication.utils = someApplication.utils || {};
+
+// someApplication.utils is now available either as an existing namespace
+// with methods and properties or as a blank namespace that's ready to use
+someApplication.utils.concat = function(target, string) {
+	target.concat(string);
+}
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>4. Nested namespacing</p>
+<pre class="prettyprint lang-js">
+var myApp =  myApp || {};
+ 
+// perform a similar existence check when defining nested children
+myApp.routers = myApp.routers || {};
+myApp.models = myApp.models || {};
+myApp.model.special = myApp.model.special || {};
+
+// nested namespaces can be as complex as required:
+// myApp.utilities.charting.html5.plotGraph(/*..*/);
+// myApp.modules.financePlanner.getSummary();
+// myApp.services.social.facebook.realtimeStream.getLatest();
+</pre>
+				<br />
+				<p>It's just like the "Object literal notation" but taken to the next level.</p><br />
+				<p>This is nothing more than grouping blocks of code in aptly named namespaces. For instance all models should be in a "app.models" namespace, all routers in their own namespace and so on...</p>
+			</div>
+
+			<div class="step slide">
+				<p>5. Self executing anonymous functions (SEAF)s</p>
+<pre class="prettyprint lang-js">
+var namespace = namespace || {};
+
+// the namespace is passed as a function parameter
+// and we assign public methods and properties to it
+(function(o) {
+    o.foo = "foo";
+    o.bar = function() {
+        return "bar";
+    };
+})(namespace);
+</pre>
+				<br />
+				<p>SEAFs are also known under the name "IIFEs" (immediately-invoked function expression)</p>
+<pre class="prettyprint lang-js">
+// an (anonymous) immediately-invoked function expression
+(function () { /*...*/ })();
+
+// a named immediately-invoked function expression
+(function foobar () { /*..*/ }());
+
+// this is technically a self-executing function which is quite different
+function foobar () { foobar(); }
+</pre>
+				<br />
+				<p>They are very useful when it comes to extensibility.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>Prefered Approach?</b></p><br />
+				<p>Depends on the project and its size but the "Nested namespacing" approach coupled with "SEAFs" seems to be the most common approach for mid-to-large sized projects.</p><br />
+<pre class="prettyprint lang-js">
+// get or define the namespace
+var namespace = namespace || {};
+namespace.utils = namespace.utils || {};
+namespace.utils.html = namespace.utils.html || {};
+
+(function(o) {
+  o.publicFoo = "public foo"; // public variable
+  o.publicBar = function() { // public method
+    var privateFoo = "some private foo", // private variable
+        getPrivateFoo = function() { // public getter on "publicBar" instance
+          return privateFoo;
+        };
+
+    return { getPrivateFoo: getPrivateFoo } ;
+  };
+})(namespace.utils.html); // passing in the namespace we're updating
+</pre>
+				<br />
+				<p></p>
+			</div>
+
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 2: Working Clean &mdash;</center></p>
+				<q><center>Thank You!</center></q>
+			</div>
+			
+			<div class="step slide">
+				<q><center>Session 3: jQuery Basics</center></q>
+				<p><center>Next <span class="red">Tuesday, 19/November/2013</span></center></p>
+				<p><center>from <span class="red">9-10</span> and <span class="red">17-18</span></center></p>
+			</div>
+			
+		</div>
+		<script src="js/impress.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>	

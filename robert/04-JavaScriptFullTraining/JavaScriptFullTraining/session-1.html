@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Session 1 - The Basics</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<link href="css/impress-demo.css" rel="stylesheet" />
+		<link href="css/desert.css" rel="stylesheet" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/prettify.js"></script>
+		
+		<style type="text/css">
+		  pre { font-size: 60%; line-height: 22px; font-family: Courier; }
+		  p.small { font-size: 70%; }
+		  .red { color: crimson; }
+		</style>
+	</head>
+
+	<body class="impress-not-supported">
+
+		<div class="fallback-message">
+			<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+			<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+		</div>
+
+		<div id="impress">
+
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 1: The Basics &mdash;</center></p>
+				<br /><br />
+				<p>Topics:</p>
+				<p>$. How to organise project files</p>
+				<p>$. JavaScript primitives</p>
+				<p>$. Prototypal inheritance</p>
+				<br /><br />
+				<p>Think twice, code once!</p>
+				<p class="small">Radu B. Gaspar</p>
+			</div>
+
+			<div class="step slide">
+				<q><center>How to organise project files</center></q>
+				<br /><br />
+				<q><center><a class="red" href="demos/project-files/index.html" target="_blank">Demo</a></center></q>
+			</div>
+			
+			<div class="step slide">
+				<q><center>JavaScript primitives</center></q>
+				<br />
+				<p>In JavaScript, whenever you interact with <mark>string</mark>, <mark>number</mark> or <mark>boolean</mark> primitives, you’re working with objects.</p>
+				<br />
+				<p>Objects are aggregations of properties. A property can reference an object or a primitive. Primitives are values, they have no properties.</p>
+				<br />
+<pre class="prettyprint lang-js">
+var someOtherObject = new Date();
+var obj = {
+    refA: someOtherObject, // object reference
+    refB: 5 // primitive reference
+};
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>In JavaScript there are <b>5 primitive types</b>: <b class="red">undefined</b>, <b class="red">null</b>, <b class="red">boolean</b>, <b class="red">string</b> and <b class="red">number</b>. Everything else is an object.</p>
+				<br />
+				<p>Boolean, string and number can be wrapped by using instances of the <span class="red">Boolean</span>, <span class="red">String</span> and <span class="red">Number</span> constructors.</p>
+				<br />
+<pre class="prettyprint lang-js">
+typeof true; //"boolean"
+typeof Boolean(true); //"boolean"
+typeof new Boolean(true); //"object"
+typeof (new Boolean(true)).valueOf(); //"boolean"
+ 
+typeof "abc"; //"string"
+typeof String("abc"); //"string"
+typeof new String("abc"); //"object"
+typeof (new String("abc")).valueOf(); //"string"
+ 
+typeof 123; //"number"
+typeof Number(123); //"number"
+typeof new Number(123); //"object"
+typeof (new Number(123)).valueOf(); //"number"
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>If primitives have no properties, why does <b>"abc".length</b> return a value?</p>
+				<br />
+				<p>JavaScript coerces between primitives and objects. In this case the string value is coerced to a string object in order to access the property length.</p>
+				<br />
+				<p>The string object is only used for a fraction of second after which it is garbage collected. Example:</p>
+				<br />
+<pre class="prettyprint lang-js">
+String.prototype.returnMe = function() {
+    return this;
+};
+
+var a = "abc";
+// interfering with the garbage collector
+var b = a.returnMe();  
+ 
+a; // "abc" 
+typeof a; // "string" (still a primitive)
+b; // "abc"
+typeof b; // "object" if 'strict mode' is not enabled
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>Verifying the object type without interfering with garbage collection:</p>
+				<br />
+<pre class="prettyprint lang-js">
+Number.prototype.toString = function() {
+    return typeof this;
+};
+(123).toString(); //"object"
+</pre>
+				<br />
+				<p>By these means primitives have access to all the properties and methods defined by their object constructors. In most cases, objects can also be coerced to values as needed.</p>
+<pre class="prettyprint lang-js">
+//object coerced to primitive 
+var Twelve = new Number(12); 
+var fifteen = Twelve + 3; 
+fifteen; //15
+typeof fifteen; //"number" (primitive)
+typeof Twelve; //"object" (still object)
+ 
+//another object coerced to primitive
+new String("hippo") + "potamus"; //"hippopotamus" 
+ 
+//object not coerced (because 'typeof' operator works with objects)
+typeof new String("hippo") + "potamus"; //"objectpotamus"
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>Boolean objects <b>do not</b> coerce so easily. A boolean object evaluates to true unless its value is null or undefined.</p>
+				<br />
+<pre class="prettyprint lang-js">
+if (new Boolean(false)) {
+    alert("true?!"); 
+}
+</pre>
+				<br />
+				<p>Usually you have to explicitly ask Boolean objects for their value:</p>
+				<br />
+<pre class="prettyprint lang-js">
+var a = "";
+new Boolean(a).valueOf(); // false
+
+// in practice it’s easier to do this
+var a = Boolean("");
+a; // false
+
+// or even this
+var a = "";
+!!a; // false
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>Does coercion allow me to assign values to primitives? <b>No.</b></p>
+				<br />
+<pre class="prettyprint lang-js">
+// can't do this
+var primitive = "september";
+primitive.vowels = 3;
+primitive.vowels; // undefined;
+</pre>
+				<br />
+				<p>If JavaScript detects an attempt to assign a property to a primitive it will indeed coerce the primitive to an object. But, as with the previous examples, this new object has no references and will immediately be garbage collected.</p>
+				<br />
+				<p>Since primitives are immutable you cannot modify them by tweaking the properties of the object wrapper:</p>
+				<br />
+<pre class="prettyprint lang-js">
+var me = new String("Radu");
+me.length = 2; // error in strict mode
+me.length; // 4
+me.valueOf(); // Radu
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>Another example, trying the same action as before, but using an array:</p>
+				<br />
+<pre class="prettyprint lang-js">
+// don't ever do this
+var arr = [1, 2, 3, 4, 5];
+arr.length; // 5
+arr.length = 2;
+arr.length; // 2
+arr; // [1, 2]
+</pre>
+				<br />
+				<p>The array is not a primitive, it's just an object, so we can change anything related to it.</p>
+				<br />
+				<p>A good understanding of primitives, and what happens under the covers when you interact with them, is an important step towards a deeper knowledge of the language.</p>
+			</div>
+			
+			<div class="step slide">
+				<q><center>Prototypal inheritance</center></q>
+				<br />
+				<p>When it comes to inheritance, JavaScript only has one construct: <b class="red">objects</b>.</p>
+				<br />
+				<p>Each object has an internal link to another object called its <b>prototype</b>. That prototype object has a prototype of its own, and so on until an object is reached with <b>null as its prototype</b>.</p>
+				<br />
+				<p>Null, by definition, has no prototype, and acts as the final link in this <b class="red">prototype chain</b>.</p>
+			</div>
+			
+			<div class="step slide">
+				<p>JavaScript objects are dynamic containers of properties, referred to as <b class="red">own properties</b>, and each one has a link to a prototype object.</p>
+				<br />
+<pre class="prettyprint lang-js">
+// inheriting properties
+var objX = {a: 1, b: 2},
+    objY = Object.create(objX);
+objY.b = 3;
+objY.c = 4;
+
+console.log(objY.a); // 1
+// is there an 'a' own property on objY? No, check its prototype
+// is there an 'a' own property on objY.__proto__? Yes, its value is 1
+
+console.log(objY.b); // 3
+// is there a 'b' own property on objY? Yes and its value is 3
+// the prototype also has a 'b' property, but it's not visited.
+// this is called "property shadowing"
+
+console.log(objY.d); // undefined
+// is there a 'd' own property on objY? No, check its prototype
+// is there a 'd' own property on objY.__proto__? No, check its prototype
+// objY.__proto__.__proto__ is null
+// stop searching, no property found, return undefined
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>JavaScript does not have "methods" in the form that class-based languages define them.</p>
+				<br />
+				<p>In JavaScript, any function can be added to an object in the form of a property. An inherited function acts just as any other property, including property shadowing as shown above (in this case, a form of <b class="red">method overriding</b>).</p>
+				<br />
+				<p>When an inherited function is executed, the value of <b class="red">this</b> points to the inheriting object, not to the prototype object where the function is an own property.</p>
+				<br /><br />
+				<center>Example: next slide</center>
+			</div>
+			
+			<div class="step slide">
+<pre class="prettyprint lang-js">
+var o = {
+    a: 2,
+    m: function(b) {
+        return this.a + 1;
+    }
+};
+
+console.log(o.m()); // 3
+// when calling o.m in this case, 'this' refers to o
+
+var p = Object.create(o);
+// p is an object that inherits from o
+
+p.a = 12; // creates an own property 'a' on p
+console.log(p.m()); // 13
+// when p.m is called, 'this' refers to p.
+// when p inherits the function m of o, 'this.a' means p.a
+// the own property 'a' of p
+</pre>
+				<br /><br />
+				<center>More on <b>"this"</b> subject in Session 5.</center>
+			</div>
+			
+			<div class="step slide">
+				<p>Objects created with syntax constructs</p>
+				<br />
+<pre class="prettyprint lang-js">
+var o = {a: 1};
+// object o has Object.prototype as its [[Prototype]]
+// o has no own property named 'hasOwnProperty'
+// hasOwnProperty is an own property of Object.prototype
+// so o inherits hasOwnProperty from Object.prototype
+// Object.prototype has null as its prototype
+// o ---> Object.prototype ---> null
+
+var a = ["isn't", "this", "cool", "?"];
+// Arrays inherit from Array.prototype
+// Array.prototype has methods like indexOf, forEach, etc.
+// The prototype chain looks like:
+// a ---> Array.prototype ---> Object.prototype ---> null
+
+function f(){
+    return 2;
+}
+// Functions inherit from Function.prototype
+// Function.prototype has methods like call, bind, etc.
+// f ---> Function.prototype ---> Object.prototype ---> null
+</pre>
+			</div>
+			
+			<div class="step slide">
+				<p>Objects created with a constructor</p>
+				<br />
+				<p>A "constructor" in JavaScript is just a function that happens to be called with the new operator.</p>
+				<br />
+<pre class="prettyprint lang-js">
+function Graph() {
+    this.vertexes = [];
+    this.edges = [];
+}
+
+Graph.prototype = {
+    addVertex: function(v){
+        this.vertexes.push(v);
+    }
+};
+
+var g = new Graph();
+// g is an object with own properties 'vertexes' and 'edges'.
+// g.__proto__ is the value of Graph.prototype when new Graph() is executed.
+</pre>
+				<br />
+				<p>ECMAScript 5 introduced a new method: Object.create. Calling this method creates a new object. The prototype of this object is the first argument of the function.</p>
+			</div>
+			
+			<div class="step slide">
+				<p><center class="red">Don't EVER extend native prototypes!</center></p>
+				<br />
+				<p>One mis-feature that is often used is to extend Object.prototype or one of the other built-in prototypes.</p>
+				<br />
+				<p>This technique is called <b>monkey patching</b> and <b>breaks encapsulation</b>. While used by popular frameworks such as Prototype.js, there is still no good reason for cluttering built-in types with additional non-standard functionality.</p>
+				<br />
+				<p>The only good reason for extending a built-in prototype is to backport the features of newer JavaScript engines; for example Array.forEach which doesn't work on IE.</p>
+			</div>
+			
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 1: The Basics &mdash;</center></p>
+				<q><center>Thank You!</center></q>
+			</div>
+			
+			<div class="step slide">
+				<q><center>Session 2: Working Clean</center></q>
+				<p><center>Next <span class="red">Thursday, 14/November/2013</span></center></p>
+				<p><center>from <span class="red">9-10</span> and <span class="red">17-18</span></center></p>
+			</div>
+			
+		</div>
+		<script src="js/impress.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>	

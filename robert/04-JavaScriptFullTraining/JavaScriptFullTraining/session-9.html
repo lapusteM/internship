@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Session 9: Responsive approach</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<link href="css/impress-demo.css" rel="stylesheet" />
+		<link href="css/desert.css" rel="stylesheet" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/prettify.js"></script>
+		
+		<style type="text/css">
+		  pre { font-size: 60%; line-height: 22px; font-family: Courier; }
+		  p.small { font-size: 70%; }
+		  .red { color: crimson; }
+		  q.small { margin-top: 50px; }
+		  q.smallest { margin-top: 0; }
+		</style>
+	</head>
+
+	<body class="impress-not-supported">
+
+		<div class="fallback-message">
+			<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+			<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+		</div>
+
+		<div id="impress">
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 9: Responsive approach &mdash;</center></p>
+				<br /><br />
+				<p>Topics:</p>
+				<p>$. Responsive design principles and best practices</p>
+				<br /><br /><br />
+				<p>Think twice, code once!</p>
+				<p class="small">Radu B. Gaspar</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>The basic principle behind responsive design is</b> <span class="red">one site for every screen</span>.<span class="red"></span></p><br />
+				<p><b>When to use it?</b> Things to consider: time &amp; money, browser support, performance, content, website or web app</p><br />
+				<p><b>How to do it?</b> One way is to use <span class="red">frameworks</span> which save time; another way is to create your own system which gives you <b>more control in the detriment of time</b>.</p><br />
+				<p><b>Best practices?</b> Content check, start small (mobile first), make it modular, always optimize.</p><br />
+				<p>So what frameworks are out there?</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>Frameworks:</b></p><br />
+				<p>Bootstrap and Modernizr are by far the best known, but there are others...</p><br />
+				<p><span class="red">MQFrameword</span> (12 column grid based)</p>
+				<p><span class="red">Foundation</span> (12 column grid based)</p>
+				<p><span class="red">Less Framework 4</span> (68px column grid based)</p>
+				<p><span class="red">Columnal</span> (1140px wide grid system inspired by cssgrid.net and 960.gs)</p>
+				<p><span class="red">Fluid Baseline Grid</span></p>
+				<p><span class="red">The Semantic Grid System</span></p>
+				<p><span class="red">Golden Grid System</span> (18 column grid based)</p>
+				<p><span class="red">The 1140px CSS Grid System</span> (fits perfectly within a 1280px screen, fluid for smaller screens)</p>
+				<p><span class="red">Skeleton</span> (small collection of CSS and JS with a lightweight 960 grid)</p>
+				<p><span class="red">320 and Up</span></p>
+			</div>
+
+			<div class="step slide">
+				<p><span class="red">The Goldilocks Approach</span> (ems, max-width, media queries and pattern translations)</p>
+				<p><span class="red">inuit.css</span> (lightweight, responsive CSS framework)</p>
+				<p><span class="red">BluCSS</span> (lightweight, responsive CSS framework, 10 column grid based)</p>
+				<p><span class="red">Frameless</span></p>
+				<p><span class="red">Gridless</span> (HTML5, CSS3 boilerplate)</p>
+				<p><span class="red">Amazium</span> (1200px grid system)</p><br />
+				<p>...and there are plenty more out there.</p><br /><br />
+				<p>There are two main approaches:</p>
+				<p><b>Adaptive</b>: which consist of multiple fixed width layouts, and</p>
+				<p><b>Responsive</b>: which consist of multiple fluid grid layouts</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>The mixed approach</b> would be using <span class="red">fixed</span> width <span class="red">for large and medium</span> screens and <span class="red">fluid</span> width for <span class="red">small</span> screens.</p><br />
+				<p>Our end goal is to have one site for evey screen... <span class="red"><b>so what's the challenge?</b></span></p><br />
+				<p><b>iOS Screen Fragmentation</b></p>
+				<center><img src="img/ios-screen-fragmentation.png" alt="ios-screen-fragmentation"/></center>
+			</div>
+
+			<div class="step slide">
+				<p><b>Android Screen Fragmentation</b></p>
+				<center><img src="img/android-screen-fragmentation.png" alt="android-screen-fragmentation"/></center><br />
+				<p>We're still just taking about <b>only 2</b> companies that provide smart devices... but those aren't the only ones, we still have <span class="red">Windows Phone</span>, <span class="red">BlackBerry</span> and others.</p>
+			</div>
+
+			<div class="step slide">
+				<center><img src="img/oh-hell-no.png" alt="oh-hell-no" width="100%" /></center>
+			</div>
+
+			<div class="step slide">
+				<p>To make matters worse, not all of them have the same browser, and implicitly <span class="red">not the same browser feature support</span>.</p><br />
+				<p>Seamingly simple things like <b>fixed positioning</b> are not possible on Windows Phone 7 or Android &lt;= 2.3 devices. The only way to achieve a similar effect is using JavaScript.</p><br />
+				<p>We still haven't said a word about web browsers, each with their own unique quirks. <span class="red">Mobile</span> web browsers and <span class="red">Desktop</span> web browsers <b>don't behave</b> the same, not even those created by the same company!</p><br />
+				<p>The reason for that is simple, a mobile device has a more finite amount of resources when compared to desktops in general.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>So which is the best framework?</b> Depends on the project.</p><br />
+				<p>Whenever starting a project, the first question(s) should be: <span class="red">Does it need to be responsive?</span> and <span class="red">What browser support are you expecting?</span></p><br />
+				<p>Based on the answers you might need to take legacy browsers into account.</p><br />
+				<p>Bootstrap seems to cover a lot of the needs and issues that developers encounter today and unlike other frameworks it uses both <span class="red">CSS</span> and <span class="red">JavaScript</span>.</p><br />
+				<p>Bootstrap <a class="red" href="http://getbootstrap.com/" target="_blank">home page</a>.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>What's the key behind responsive layouts?</b> Relative width containers (flexible width) and <span class="red">CSS media queries</span>.</p><br />
+				<p><b>What browsers support them?</b> <a class="red" href="http://caniuse.com/#feat=css-mediaqueries" target="_blank">See "CanIUse.com"</a></p><br />
+				<p><b>What about the rest?</b> Good old-fashioned <span class="red">JavaScript</span>. Fully featured frameworks like <span class="red">ExtJS</span> use JavaScript, at their core, for component rescaling. Anything and everything you use is scaled based on your browsers size.</p><br />
+				<p>It should be mentioned at this stage that <span class="red">simply rescaling content does not make your site responsive</span>!</p><br />
+				<p>Responsiveness also encompasses the look and feel of the site. You also have to reposition the contents of the site in addition to rescaling it to fully take advantage of the screen you have to work with.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Bootstrap homepage seen on multiple screen sizes:</p>
+				<center><img src="img/bootstrap-multiple-screens.jpg" alt="bootstrap-multiple-screens" width="100%" /></center>
+				<p>The size and layout of the content is different on all screens. This is what we mean by <span class="red">responsive</span>.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Talk about doing more than one thing at once...</p><br />
+				<center><img src="http://stream1.gifsoup.com/view4/1363633/kramer-smoking-and-drinking-o.gif" alt="smoking-and-drinking" /></center>
+				<p>...that is what responsive sites are really about.</p><br />
+				<p>It will add <span class="red">to your development time</span> and it's not a walk in the park even using frameworks.</p><br />
+				<p><b>Testing on multiple devices is mandatory</b> and development time will at least be doubled based on how many devices need to be supported.</p>
+			</div>
+
+			<div class="step slide">
+				<p>What you will need is a list of <span class="red">displays by pixel density</span>, luckily somebody already thought of <a class="red" href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density" target="_blank">that</a></p><br />
+				<p>Alternatively you could use a <a class="red" href="http://spirelightmedia.com/resources/responsive-design-device-resolution-reference" target="_blank">simplified version</a> when working towards responsive design.</p><br />
+				<p>Make it easy. Use JavaScript to detect the browser width (and/or height as needed), then apply a CSS class on the body that restyles the content based on that class.</p><br />
+<pre class="prettyprint lang-js">
+var ww = $(window).width(),
+    body = $("body").removeClass();
+if(ww > 1200) {
+    body.addClass("large");
+} else if(ww >= 800 &amp;&amp; ww &lt;= 1200) {
+    body.addClass("medium");
+} else {
+    body.addClass("small");
+}
+</pre>
+			</div>
+
+            <div class="step slide">
+                <p>Now we can use CSS to use those classes:</p><br />
+<pre class="prettyprint lang-css">
+body.large .content { width: 1500px; }
+body.medium .content { width: 900px; }
+body.small .content { width: 600px; }
+</pre><br />
+                <p>These classes and styles can be as fine-grained as you need them and using classes in apropriate places can trigger cascading layout changes.</p><br />
+                <p><b>Use CSS inheritance to make things easier.</b></p><br />
+                <p>Using <span class="red">multiple HTML layouts</span> for the same thing is <span class="red">not</span> be <span class="red">required</span>. If you need a menu to look different depending on the screen size, <b> that change can be handled by CSS</b> and a bit of JavaScript.</p>
+            </div>
+
+            <div class="step slide">
+                <p>Bootstrap does this with it's navigation bars, which toggle from an inline menu to a simple button.</p><br />
+                <p>That button has an event attached to it which displays a dropdown menu with your navigation items.</p><br />
+                <p>That's pretty easy to achieve and here's how:</p><br />
+<pre class="prettyprint lang-css">
+/* styles that apply on large screens */
+body.large .menu-inline { /* display the larger inline menu */ }
+body.large .menu-collapsed { display: none; /* hide the collapsed menu */ }
+
+/* styles that apply on small screens */
+body.small .menu-inline { display: none; /* hide the larger menu */ }
+body.small .menu-collapsed { /* display the collapsed menu */ }
+</pre><br />
+                <p>By changing a class on the body (or a container of our choice, like a menu), we can affect all of our DOM elements using simple CSS rules.</p>
+            </div>
+
+            <div class="step slide">
+                <p>The Boostrap menu is no different. As soon as your browsers <span class="red">width</span> drops beneath a certain value, a class is added to the menu which restyles the entire thing.</p><br />
+                <p>Responsive design isn't the easiest thing in the world, and it's definitely not the hardest but the alternative is multiple sites which are device specific.</p><br />
+                <p>Before we conclude this training, a few more things you should know about JavaScript.</p><br /><br />
+                <p><center><a class="red" href="https://www.destroyallsoftware.com/talks/wat" target="_blank">WAT!</a></center></p>
+            </div>
+
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 9: Responsive approach &mdash;</center></p>
+				<q><center>Thank You!</center></q><br />
+                <q><center>JavaScript Training 2013</center></q>
+			</div>
+		</div>
+		<script src="js/impress.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>	

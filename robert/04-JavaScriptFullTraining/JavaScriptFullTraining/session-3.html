@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Session 3 - jQuery Basics</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<link href="css/impress-demo.css" rel="stylesheet" />
+		<link href="css/desert.css" rel="stylesheet" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/prettify.js"></script>
+		
+		<style type="text/css">
+		  pre { font-size: 60%; line-height: 22px; font-family: Courier; }
+		  p.small { font-size: 70%; }
+		  .red { color: crimson; }
+		  q.small { margin-top: 50px; }
+		</style>
+	</head>
+
+	<body class="impress-not-supported">
+
+		<div class="fallback-message">
+			<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+			<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+		</div>
+
+		<div id="impress">
+
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 3: jQuery Basics &mdash;</center></p>
+				<br /><br />
+				<p>Topics:</p>
+				<p>$. Introduction to jQuery</p>
+				<p>$. jQuery loops, templating, filtering using grep, chaining</p>
+				<br /><br />
+				<p>Think twice, code once!</p>
+				<p class="small">Radu B. Gaspar</p>
+			</div>
+
+			<div class="step slide">
+				<q><b><center>Introduction to jQuery</center></b></q>
+			</div>
+
+			<div class="step slide">
+				<p>jQuery is a lightweight, cross-browser JavaScript library used for:</p><br />
+				<ul>
+					<li>1. DOM traversal and manipulation</li>
+					<li>2. Event handling</li>
+					<li>3. Animations</li>
+					<li>4. Ajax</li>
+					<li>...and more</li>
+				</ul><br />
+				<p>It comes in two main versions (which are both in development):</p>
+				<ul>
+					<li>$.jQuery 1.x - cross-browser support for all its features</li>
+					<li>$.jQuery 2.x - <b>doesn't include</b> support for IE 6, 7 or 8 and was created specifically for modern, HTML5 compliant, browsers.</li>
+				</ul>
+			</div>
+
+			<div class="step slide">
+				<p>jQuery can be extended with new functionality through the means of <span class="red">jQuery Plugins</span>.</p><br />
+				<p>An <a class="red" href="http://plugins.jquery.com/" target="_blank">official</a> plugin registry exists, which offers extra functionalities for things like: UI, animations, effects, image handling and more.</p><br />
+				<p>One of the most recognized plugin is <a class="red" href="http://jqueryui.com/" target="_blank">jQuery UI</a> which comes packed with a set of user interactions, widgets, effects and utilities. You also have the option of customizing your jQuery UI download, to suit your project needs.</p><br /><br />
+				<p><center>More about jQuery UI in Session 7.</center></p>
+			</div>
+
+			<div class="step slide">
+				<p><b>Is that all?</b> Of course not!</p><br />
+				<p>Having a plugins directory is nice, but we can easily make our own plugins, to suit our <span class="red">project specific</span> needs.</p><br />
+				<p><center>More about creating jQuery plugins in Session 6.</center></p><br />
+				<p><b>Why should I use it? Can't I just write JavaScript?</b></p><br />
+				<p>It's not a question of "why should you use it", it rather a question of <span class="red">why shoudn't you</span>? You could write pure JavaScript but...</p><br />
+				<p>Each browser has a slightly different DOM interface. This is where jQuery comes in, it helps you write one piece of code which can communicate with all web browsers.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b><center>DOM traversal</center></b></p><br />
+				<p>It all starts with the jQuery selector</p>
+<pre class="prettyprint lang-js">
+// the jQuery selector is simply the word "jQuery"
+jQuery(&lt;code&gt;);
+
+// or the more used shorthand version
+$(&lt;code&gt;);
+</pre>
+				<br />
+				<p><b>What do we pass to the jQuery method?</b> We can pass it <span class="red">CSS selectors</span> to find elements in our DOM or <span class="red">HTML tags</span> to create HTML content.</p>
+<pre class="prettyprint lang-js">
+// find all "h1" tags
+$("h1");
+
+// find all "h1" tags which have the class "header"
+$("h1.header"); // like in CSS, class selectors are preceded by "."
+
+// the same rule applies for finding elements by id
+$("h1#main-header"); // id selectors are preceded by "#"
+
+// creating new elements is also really easy
+$("&lt;div&gt;&lt;/div&gt;"); // this div can now be added to the DOM
+// it would suffice to just say $("&lt;div&gt;"); but IE has problems generating
+// some HTML elements if the closing tag is not provided
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>There are a lot of JavaScript libraries out there and some of them might define "$" as something else.</p><br />
+				<p>If we need "$" to always mean jQuery, or to be a reference to jQuery within a defined scope, we can do this:</p><br />
+<pre class="prettyprint lang-js">
+// DOM ready
+jQuery(function() { // we use "jQuery" because "$" might be something else
+    (function($) { // we define "$" as the argument
+        // in here "$" will always be "jQuery"
+        $(...)
+    })(jQuery); // S.E.A.F. with jQuery as the parameter
+});
+</pre>
+				<br />
+				<p>Even if our project uses many libraries which could be in conflict with one another, we can easily change the scope of our methods to suit our needs.</p>
+			</div>
+
+			<div class="step slide">
+				<p>Naturally we can search the DOM for elements without specifying the tag name.</p><br />
+<pre class="prettyprint lang-js">
+// find all elements which have the class "header"
+$(".header");
+</pre>
+				<br />
+				<p>This is the starting point when working with jQuery. Every jQuery DOM selector will return an <span class="red">array</span> containing 0 or more DOM elements.</p><br />
+				<p>If the array is empty, it simply means that what we're looking for doesn't exist.</p><br />
+<pre class="prettyprint lang-js">
+// find all elements that have a class "header"
+var headers = $(".header");
+if(headers.length > 0) {
+    // we have some elements with class "header"
+} else {
+    // no elements with class "header" in the DOM
+}
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>Like with CSS, we can be as specific as we want in our jQuery selectors.</p><br />
+<pre class="prettyprint lang-js">
+// we can do this
+$("#content h1");
+
+// it's faster if we do it like this
+$("#content").find("h1");
+</pre>
+				<br />
+				<p>A good suggestion is to <span class="red">be as specific as you <b>need</b></span>. Keep the number of selectors as few as possible and store the selector if you intend on performing multiple operations with it.</p>
+<pre class="prettyprint lang-js">
+// doing it wrong
+$("#content").find(".title").text("Some other text").css("color", "white");
+$("#content").css("background-color", "black");
+// searching for content a second time, even though we already found it
+
+// the right way
+var content = $("#content"),
+    title = content.find(".title");
+title.text("Some other text").css("color", "white");
+content.css("background-color", "black");
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><b>What else can we do?</b> A lot! <b>Traversal</b> is one thing:</p>
+<pre class="prettyprint lang-js">
+$().next(&lt;sel&gt;);      // get the immediately following sibling (*)
+$().nextAll(&lt;sel&gt;);   // get all following siblings (*)
+$().nextUntil(&lt;sel&gt;); // get all following siblings (**)
+$().prev(&lt;sel&gt;);      // get the immediately preceding sibling (*)
+$().prevAll(&lt;sel&gt;);   // get all preceding siblings (*)
+$().prevUntil(&lt;sel&gt;); // get all preceding siblings (**)
+$().andSelf();        // add elements on the stack to the current set
+$().siblings(&lt;sel&gt;);  // get the siblings (*)
+$().children(&lt;sel&gt;);  // get the children (*)
+$().first();          // (***) first in the set
+$().last();           // (***) final one in the set
+
+// (*) get the first element that matches the selector
+// by testing the element itself and traversing up through its ancestors
+$().closest(&lt;sel&gt;);
+$().eq(index);        // (***) one at the specified index
+$().index(&lt;sel&gt;);     // search for a given element in the matched elements
+$().parent(&lt;sel&gt;);    // get the parent (*)
+$().parents(&lt;sel&gt;);   // get the ancestors (*)
+$().find(&lt;sel&gt;);      // get the descendants (*)
+/* (*)   of each element in the set of matched elements
+   (**)  of each element up to but not including the element
+         matched by the selector
+   (***) reduce the set of matched elements to the
+   &lt;sel&gt; optionally filtered by a selector */
+</pre>
+				<p>A few of the most common DOM traversal methods.</p>
+			</div>
+
+			<div class="step slide">
+				<q><center><b>DOM manipulation and Event Handling in <span class="red">Session 4</span></b></center></q>
+			</div>
+
+			<div class="step slide">
+				<p><b><center>Animations</center></b></p><br />
+				<p>We create them with the jQuery <a class="red" href="http://api.jquery.com/animate/" target="_blank">.animate();</a> function. Animations are performed by changing CSS properties on an interval.</p><br />
+<pre class="prettyprint lang-js">
+/*** extracts from the jQuery API ***/
+// the animate function works with the following params
+.animate( properties [, duration ] [, easing ] [, complete ] )
+
+// or alternatively we could simply use this
+.animate( properties, options )
+</pre>
+				<br />
+				<p>The <span class="red">properties</span> represent a set of CSS attributes based on which the animation will occur and the <span class="red">options</span> are represented by the animation <span class="red">duration</span>, <span class="red">easing function</span>, <span class="red">queue</span>, <span class="red">special easing</span>, <span class="red">step, progress, complete, start, done, fail and always</span> callback functions.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>Is the animate method the only way?</b> No, there are other <span class="red">effect</span> methods buit into jQuery, which perform some basic/common animations, like <span class="red">.slideToggle();</span></p><br />
+				<p>A full list of available effects, visit the <a href="http://api.jquery.com/category/effects/" class="red" target="_blank">jQuery Effects</a> page.</p><br />
+				<q><center><a class="red" href="demos/animate-slide-toggle/index.html" target="_blank">Demo</a></center></q>
+			</div>
+
+			<div class="step slide">
+				<p><b>Can we do other types of animation?</b> Yes! We can also do animations on the <span class="red">HTML5 Canvas</span> element.</p><br />
+				<p>In game development the process is called <span class="red">blitting</span> and it's basically a <span class="red">frame by frame</span> animation.</p><br />
+				<p>The process requires spritesheets which contain our animated objects in every state or image sets of the same object in multiple states. Spritesheet example:</p><br />
+				<center><img src="demos/blitting/ryu.png"></center>
+				<q class="small"><center><a class="red" href="demos/blitting/index.html" target="_blank">Demo</a></center></q>
+			</div>
+
+			<div class="step slide">
+				<q><center><b>More about Animations in <span class="red">Session 6</span></b></center></q>
+			</div>
+			
+			<div class="step slide">
+				<p><b><center>Ajax</center></b></p><br />
+				<p>It's used to perform asynchronous HTTP requests. Of course jQuery already has built-in support for Ajax:</p><br />
+<pre class="prettyprint lang-js">
+// extract from jQuery API
+jQuery.ajax( url [, settings ] )
+
+// or just simply
+jQuery.ajax( [settings ] ) // the URL can be part of the settings
+</pre>
+				<br />
+				<p>jQuery also has two helper methods what work with Ajax, namely: <span class="red">$.get</span> and <span class="red">$.post</span>.</p><br />
+<pre class="prettyprint lang-js">
+// load data from the server using a HTTP GET request
+// jQuery.get(url [,data] [,success(data, textStatus, jqXHR)] [,dataType])
+$.get("ajax/test.html", function(data) {
+  $(".result").html(data); // got some response data
+});
+
+// load data from the server using a HTTP POST request
+// jQuery.post(url [,data] [,success(data, textStatus, jqXHR)] [,dataType])
+$.post("test.php", { name: "John", time: "2pm", hobbies: ["tea", "books"] });
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>Although there are no built-in helper methods for actions like <span class="red">PUT</span> and <span class="red">DELETE</span>, like we have for <span class="red">GET</span> and <span class="red">POST</span>, we can simply use the <span class="red">$.ajax</span> method to perform these actions.</p><br />
+<pre class="prettyprint lang-js">
+// ajax delete request
+$.ajax({
+    url: '/test.php',
+    type: 'DELETE',
+    data: { "uuid": "b1820b70-4deb-11e3-8f96-0800200c9a66" },
+    success: function(result) {
+        // do something on success
+    }
+});
+
+// ajax update request
+$.ajax({
+    url: '/test.php',
+    data: { ... },
+    type: 'PUT',
+    success: function(result) {
+        // do something on success
+    }
+});
+</pre>
+				<br />
+				<p><center>More about Ajax in Session 8</center></p>
+			</div>
+
+			<div class="step slide">
+				<q><b><center>jQuery loops, templating, filtering using grep, chaining</center></b></q>
+			</div>
+
+			<div class="step slide">
+				<p><b>jQuery Loops</b></p><br />
+				<p>The jQuery <span class="red">$.each</span> loop method is used for traversing both <span class="red">arrays and objects</span>. Usage:</p>
+<pre class="prettyprint lang-js">
+// jQuery.each(collection, callback(indexInArray, valueOfElement))
+// traversing arrays
+var arr = [1, 2, 3, "a", "b", "c"];
+$.each(arr, function(idx, elm) {
+    console.log(idx, elm);
+});
+
+// traversing objects
+var obj = {
+    "type": "electrical",
+    "voltage": "220",
+    "friendly": "false"
+}
+$.each(obj, function(key, val) {
+    console.log(key, val);
+});
+
+// there's also an each function for traversing jQuery objects
+// .each( function(index, Element) )
+$("li").each(function(index) { // or $.each($("li"), doSomething);
+    console.log(index + ": " + $(this).text());
+});
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>In addition to $.each we can use <span class="red">$.map</span> to apply a function to each item in the array, thus returning a modified array.</p><br />
+<pre class="prettyprint lang-html">
+&lt;!-- inside the html file --&gt;
+&lt;ul id="test"&gt;
+    &lt;li&gt;1&lt;/li&gt;
+    &lt;li&gt;2&lt;/li&gt;
+    &lt;li&gt;3&lt;/li&gt;
+    &lt;li&gt;4&lt;/li&gt;
+    &lt;li&gt;5&lt;/li&gt;
+    &lt;li&gt;6&lt;/li&gt;
+    &lt;li&gt;7&lt;/li&gt;
+    &lt;li&gt;8&lt;/li&gt;
+    &lt;li&gt;9&lt;/li&gt;
+    &lt;li&gt;10&lt;/li&gt;
+&lt;/ul&gt;
+</pre><br />
+<pre class="prettyprint lang-js">
+// jQuery.map( array, callback( elementOfArray, indexInArray ) )
+var list = $("#test"),
+    listChildren = list.find("li");
+
+list.empty().append(
+    $.map(listChildren, function(value, index) {
+        return ("&lt;li&gt;List element " + index + "&lt;/li&gt;");
+    })
+);
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><b>jQuery Templating</b></p><br />
+				<p>The official jQuery Template Plugin can be found on <a href="https://github.com/BorisMoore/jquery-tmpl" class="red" target="_blank">GitHub</a> but it's no longer being actively developed or maintained.</p><br />
+				<p>The purpose of templating is to create reusable pieces of HTML. You provide the necessary data to the templating function then, based on the selected template, the engine generates content for all entries in the data object.</p><br />
+				<p>After including the jQuery plugin into our page, using it is simple:</p><br />
+<pre class="prettyprint lang-js">
+// usage
+// jQuery.tmpl( template [, data] [, options] )
+</pre>
+				<q class="small"><center><a class="red" href="demos/templating/index.html" target="_blank">Demo</a></center></q>
+			</div>
+
+			<div class="step slide">
+				<p>Even if the official plugin is no longer maintained, there are plenty of templating libraries out there:
+					<span class="red">dom.js</span>,
+					<span class="red">doT.js</span>,
+					<span class="red">dust.js</span>,
+					<span class="red">EJS</span>,
+					<span class="red">Handlebars.js</span>,
+					<span class="red">Hogan.js</span>,
+					<span class="red">ICanHaz.js</span>,
+					<span class="red">Jade templates</span>,
+					<span class="red">JsRender</span>,
+					<span class="red">Markup.js</span>,
+					<span class="red">Microtemplating</span>,
+					<span class="red">Mustache.js</span>,
+					<span class="red">Nunjucks</span>,
+					<span class="red">Plates.js</span>,
+					<span class="red">pure.js</span>,
+					<span class="red">Transparency</span>,
+					<span class="red">Underscore templates</span> and plenty more!.
+				</p><br />
+				<p>Handlebars or Underscore are pretty popular templating libraries and Underscore has been benchmarked as one of the fastest out ther, along with doT.js and Microtemplating.</p><br />
+				<p>Another advantage of templating engines is that most of them can be used on both the client and the server.</p>
+			</div>
+
+			<div class="step slide">
+				<p><b>jQuery Filtering</b></p><br />
+				<p>We use <span class="red">$.grep()</span> when we want to apply a filter to an array. The filter works with a custom filtering function.</p><br />
+<pre class="prettyprint lang-js">
+// jQuery.grep( array, function(elementOfArray, indexInArray) [, invert ] )
+
+// return all even numbers
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$.grep(arr, function(value, index) { return index%2==0; });
+
+// return all numbers greater than 4, except 7
+var arr = [1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1];
+$.grep(arr, function(value, index) { return (value !== 7 &amp;&amp; value > 4); });
+
+// return all users that have the "firstName" starting with "a"
+var users = [
+    {"firstName":"Radu", "lastName":"Gaspar"},
+    {"firstName":"Andrei", "lastName":"Pop"},
+    {"firstName":"Alin", "lastName":"Stan"}
+];
+$.grep(users, function(element, index) {
+    var firstLetter = element.firstName.toLowerCase().match(/^.{0,1}/);
+    if(firstLetter == "a") { return element; }
+});
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>There's also the <span class="red">$.filter()</span> method available and it's used to reduce the set of matched elements to those that match the selector or pass the function's test.</p><br />
+<pre class="prettyprint lang-html">
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item 1 - one strong tag&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item 2 - &lt;strong&gt;two strong tags&lt;/strong&gt;&lt;/li&gt;
+    &lt;li>list item 3&lt;/li&gt;
+    &lt;li>list item 4&lt;/li&gt;
+    &lt;li>list item 5&lt;/li&gt;
+    &lt;li>list item 6&lt;/li&gt;
+&lt;/ul>
+</pre><br />
+<pre class="prettyprint lang-js">
+// filter list elements with one strong tag
+// change background color to red
+$("li").filter(function(index) {
+    return $("strong", this).length === 1;
+}).css("background-color", "red");
+
+// change all "even" list elements
+// to have a red background
+$("li").filter(":even").css("background-color", "red");
+// will affect list items 1, 3, and 5 because
+// ":odd" and ":even" use 0-based indexing
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><b>jQuery Chaining</b></p><br />
+				<p>In jQuery we can chain together methods. That means that we can run multiple jQuery methods (on the same element) within a single statement</p><br />
+				<p><b>Why is this useful?</b> Because browsers won't have to find the same element(s) more than once.</p><br />
+				<p><b>How do you do it?</b> Simple, just append an action to the previous action. Example:</p><br />
+<pre class="prettyprint lang-js">
+// chaining css, slideUp and slideDown
+$("#paragraph").css("color", "magenta").slideUp(500).slideDown(1000);
+
+// we don't need to keep every action in the chain, on the same line
+// this is also valid
+$("#paragraph").css("color", "magenta")
+  .slideUp(500)
+  .slideDown(1000);
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p><b>How does chaining work?</b> Almost all jQuery methods return a jQuery object. Meaning that after you've run a method on your selection, you can continue running more methods.</p><br />
+				<p>You can even change your selection (in this case with find()), and continue to run methods on your new selection.</p><br />
+<pre class="prettyprint lang-js">
+$("#menu").fadeIn("fast")
+  .addClass("active")
+  .find("li:first") // changing the selection to the first "li" tag
+  .css("paddingLeft", 10); // applying 10px left padding to the "li" tag
+</pre>
+				<br />
+				<p>We can also chain events in this manner:</p><br />
+<pre class="prettyprint lang-js">
+$("#button").click(function(e){
+   // do something on click
+}).mouseleave(function(e){
+   // do something on mouse leave
+});
+</pre>
+			</div>
+
+			<div class="step slide">
+				<p>The major advantages of chaining include <span class="red">writting less code</span> and <span class="red">your code runs faster</span>.</p>
+<pre class="prettyprint lang-js">
+// no chaining
+$("#menu").fadeIn("fast");
+$("#menu").addClass(".active");
+$("#menu").css("paddingLeft", 10);
+
+// vs. with chaining
+$("#menu").fadeIn("fast")
+   .addClass("active")
+   .css("paddingLeft", 10);
+</pre>
+				<br />
+				<p>It's <b>almost</b> the same thing as storing a reference to a selector:</p>
+<pre class="prettyprint lang-js">
+// object reference vs. chaining
+var $menu = $("#menu");
+$menu.fadeIn("fast");
+// ... tons of other code here
+$menu.addClass(".active");
+$menu.css("paddingLeft", 10);
+
+// the diference is that chaining can't be interrupted
+// by other pieces of code where as object references can
+</pre>
+			</div>
+
+			<div class="step slide">
+				<q><center>JavaScript Training</center></q>
+				<p><center>&mdash; Session 3: jQuery Basics &mdash;</center></p>
+				<q><center>Thank You!</center></q>
+			</div>
+			
+			<div class="step slide">
+				<q><center>Session 4: Events and content handling</center></q>
+				<p><center>Next <span class="red">Thursday, 21/November/2013</span></center></p>
+				<p><center>from <span class="red">9-10</span> and <span class="red">17-18</span></center></p>
+			</div>
+			
+		</div>
+		<script src="js/impress.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>	

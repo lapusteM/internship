@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Animate, SlideToggle</title>
+		<!--
+		  Never write CSS in head style tags
+		  these are used for DEMO purposes ONLY!
+		 -->
+		<style type="text/css">
+			html, body { overflow: hidden; }
+		 	* { margin: 0; padding: 0; text-decoration: none; font-family: Arial, Verdana; font-size: 14px; }
+		 	ul { width: 900px; margin: 0 auto; margin-top: 50px; position: relative; z-index: 1; }
+		 	ul, li { list-style: none; list-style-type: none; }
+			h2 { font-size: 14px; margin: 0 0 5px 0; }
+			a { background: #ccc; display: block; padding: 5px; color: #000; font-weight: bold; border-bottom: 2px solid #aaa; }
+			a:hover { background: #ddd; }
+			img { float: left; margin-right: 10px; }
+			p { margin: 10px 0; }
+			.title { text-align: center; margin-bottom: 20px; }
+			.content { padding: 10px; border: 1px solid #ccc; line-height: 1.6em; display: none; overflow: hidden; background: #fff; }
+			.box {
+				background-color: #f00;
+				color: #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 35px;
+				width: 200px;
+				text-align: center;
+				z-index: 0;
+			}
+			.pat {
+				background:
+					radial-gradient(black 15%, transparent 16%) 0 0,
+					radial-gradient(black 15%, transparent 16%) 8px 8px,
+					radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+					radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+					background-color:#282828;
+					background-size:16px 16px;
+				color: #fff;
+				font-weight: bold;
+			}
+		</style>
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	</head>
+<body>
+	<ul>
+		<li class="title"><b>Accordion - Slide Toggle</b></li>
+		<li>
+			<a href="#">First Menu</a>
+			<div class="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in nunc purus, ut pharetra massa. Praesent volutpat convallis neque sit amet dapibus. Mauris ut purus leo, quis accumsan magna. Vivamus tincidunt magna at velit lacinia in consequat metus lacinia. Proin non bibendum turpis. Sed tempor, risus sed pretium pretium, risus ipsum porttitor ante, vel aliquet erat elit ac enim. Vestibulum ut lectus lorem, sit amet fermentum elit. Praesent in turpis diam. Praesent ut tellus nunc, vitae consequat lacus. Vivamus ut metus at metus iaculis sagittis. Nunc at justo ante.</p>
+				<p>Duis mattis risus ut justo consequat euismod. Duis sagittis nisi eget sapien ultricies non tristique sapien vehicula. Vivamus in neque eu tellus suscipit imperdiet in a est. Aliquam erat volutpat. Praesent sit amet turpis enim. In hac habitasse platea dictumst. Etiam placerat tempor enim, ut feugiat est porta ut. Cras molestie ipsum vitae quam eleifend cursus. In ac est ut ligula elementum sollicitudin. Phasellus facilisis elementum lorem, et mattis nunc facilisis ac.</p>
+			</div>
+		</li>
+		<li>
+			<a href="#">Second Menu</a>
+			<div class="content">
+				<p>Duis mattis risus ut justo consequat euismod. Duis sagittis nisi eget sapien ultricies non tristique sapien vehicula. Vivamus in neque eu tellus suscipit imperdiet in a est. Aliquam erat volutpat. Praesent sit amet turpis enim. In hac habitasse platea dictumst. Etiam placerat tempor enim, ut feugiat est porta ut. Cras molestie ipsum vitae quam eleifend cursus. In ac est ut ligula elementum sollicitudin. Phasellus facilisis elementum lorem, et mattis nunc facilisis ac.</p>
+			</div>
+		</li>
+		<li>
+			<a href="#">Third Menu (with CSS3 background)</a>
+			<div class="content pat">
+				<img src="http://www.portlandart.net/archives/Darth_Bozhkov.jpg" />
+				<p>Itty bitty text followed by some lipsum:</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in nunc purus, ut pharetra massa. Praesent volutpat convallis neque sit amet dapibus. Mauris ut purus leo, quis accumsan magna. Vivamus tincidunt magna at velit lacinia in consequat metus lacinia. Proin non bibendum turpis. Sed tempor, risus sed pretium pretium, risus ipsum porttitor ante, vel aliquet erat elit ac enim. Vestibulum ut lectus lorem, sit amet fermentum elit. Praesent in turpis diam. Praesent ut tellus nunc, vitae consequat lacus. Vivamus ut metus at metus iaculis sagittis. Nunc at justo ante.</p>
+				<br /><br />
+				<p>...wait a minute...</p>
+			</div>
+		</li>
+	</ul>
+
+	<div class="box">Wild box running everywhere!<br />-powered by jQuery animate-</div>
+
+	<!--
+	  If possible, don't write JavaScript in script tags
+	  this is used for DEMO purposes ONLY!
+	 -->
+	<script type="text/javascript">
+		var $doc = $(document),
+			$docW = $doc.width();
+
+		// accordion toggle
+		$("ul").on("click", "a", function(e) {
+			var $this = $(this),
+				$next = $this.next(),
+				$expanded = $(".expanded");
+
+			// check if currently clicked section is not currently expanded
+			if(!$next.hasClass("expanded"))
+				// expand current accordion section
+			    $next.slideToggle().addClass("expanded");
+
+			// collapse previously selected accordion section
+			$expanded.slideToggle().removeClass("expanded");
+
+		    return false;
+		});
+
+		// box animate
+		setInterval(function(){
+			$('.box').animate({
+				'top': Math.random() * $doc.height(),
+				'width': Math.random() * $docW / 4,
+			}, 600, 'swing', function() { console.log('your first animation is done') })
+			.animate({
+				'left': Math.random() * $docW
+			}, {
+				duration: 1000,
+			    complete: function() {
+			    	console.log('width animation is done');
+			    },
+			    step: function() {
+			    },
+			    queue: false
+			});
+		}, 2000);
+		
+	</script>
+</body>
+</html>
