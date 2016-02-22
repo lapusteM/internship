@@ -16,9 +16,9 @@ function changeElem(direction) {
     if (!item.classList.contains("opacity")) {
       item.className = "slide-elem opacity"; //the visible element will receive opacity 0
 
-      if (direction == 'prev') {
+      if (direction === 'prev') {
         //verifies if the first element was visible then the last should become visible
-        if (i == 0) {
+        if (i === 0) {
           slideElems[len - 1].className = "slide-elem";
           return; //stops execution
         }
@@ -26,9 +26,9 @@ function changeElem(direction) {
         return;
       }
 
-      if (direction == 'next') {
+      if (direction === 'next') {
         //verifies if the visible element is the last one - then the first one should become visible
-        if (i == len - 1) {
+        if (i === len - 1) {
           slideElems[0].className = "slide-elem";
           return; //stops execution
         }

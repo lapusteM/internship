@@ -6,7 +6,7 @@ var addButton = document.getElementById("addDiv"); //targets the button which ge
 addButton.addEventListener("click", function(){
 
   var text; //declaring the variable but without value
-  var height = 500; //this variable will store the height of the parent div (class="first") which will grow dinamically
+  // var height = 500; //this variable will store the height of the parent div (class="first") which will grow dinamically
 
   //getElementsByClassName will return an array containing all the html elements which have the box-wrapper class
   var boxWrapper = document.getElementsByClassName("box-wrapper"); //getting the wrapper div on wich we want to append the newly created element
@@ -39,7 +39,7 @@ addButton.addEventListener("click", function(){
   newDiv.appendChild(newP);
 
   //height = height + 258;
-  document.getElementsByClassName('first')[0].style.height = "758px";
+  // document.getElementsByClassName('first')[0].style.height = "758px";
 
   //boxWrapper will be an array
   //we target the first element and add to it the div
