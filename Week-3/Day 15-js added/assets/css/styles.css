@@ -6671,6 +6671,7 @@ body {
 .slide .slide-elem {
   margin: 0;
   background: transparent;
+  -webkit-user-select: none;
 }
 .slide .slide-content {
   font-size: 20px;
@@ -6714,4 +6715,5 @@ body {
 }
 .opacity {
   display: none;
+  -webkit-user-select: none;
 }
