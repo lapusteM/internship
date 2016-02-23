@@ -12,7 +12,7 @@ addButton.addEventListener("click", function(){
   var boxWrapper = document.getElementsByClassName("box-wrapper"); //getting the wrapper div on wich we want to append the newly created element
 
   var newDiv = document.createElement("div"); //parent div which will hold all the child elements
-  newDiv.className = "col-33 feature-right";
+  newDiv.className = "col-33 feature-right margins";
 
   var dateSpan = document.createElement("span");
   text = document.createTextNode("8/10/2016");
