@@ -3,21 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Week3-Day3-2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
   </head>
   <body>
       <div class="wrapper">
         <div class="header">
-          <div class="">
             <nav class="navbar navbar-inverse navi">
               <div class="container-fluid containe">
                 <ul class="nav navbar-nav pull-left">
@@ -27,7 +19,6 @@
                   <li class="navi-font"><a href="#">about us</a></li>
                   <li class="navi-font"><a href="#">contact us</a></li>
                   <li class="navi-font"><a href="#">carrers</a></li>
-
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                   <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                   <li><a href="#"><i class="fa fa-reddit-alien"></i></a></li>
@@ -35,15 +26,14 @@
                 </ul>
               </div>
             </nav>
-          </div>
           <nav class="navbar navbar-default navi">
-            <div class="container-fluid containe2">
+            <div class="container-fluid containe navi2-height">
               <div class="navbar-header">
                 <a class="navbar-brand" href="#">
                   <img alt="Brand" src="assets/img/logo.png">
                 </a>
               </div>
-              <ul class="b nav navbar-nav vertical-center pull-right">
+              <ul class="nav navbar-nav vertical-center pull-right">
                 <li class="navi2-font"><a href="#">Home</a></li>
                 <li class="navi2-font"><a href="#">champions</a></li>
                 <li class="navi2-font"><a href="#">builds & schemas</a></li>
@@ -54,11 +44,9 @@
             </div>
           </nav>
         </div>
-        <div class="cf">
-
-
-        </div>
-        <div class="main-content background">
+<!-- content after header -->
+        <div class="main-content background cf">
+<!-- slider -->
           <div class="slide">
             <div id="prev" class="col-10 pull-left" onclick="changeElem('prev')">
               <i class="fa fa-arrow-left center-middle icon"></i>
@@ -120,8 +108,9 @@
               <i class="fa fa-arrow-right center-middle icon"></i>
             </div>
           </div>
-          <div class="cf"></div>
-          <div class="main-top containe">
+<!-- main content splited in three sections -->
+<!-- main-top section -->
+          <div class="main-top containe cf">
             <div class="first">
               <div class="feature-left col-20">
                 <div class="featured">
@@ -133,69 +122,69 @@
                   </div>
                   <div class="images pull-left">
                   </div>
-                  <div class="bla pull-left">
+                  <div class="score pull-left">
                     <div class="sub-title">
                       0-9-21
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="health">health</label>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="attack">attack</label>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="magic">magic</label>
-                      <div class="div-small-blue pull-left"></div>
-                      <div class="div-small-blue pull-left"></div>
-                      <div class="div-small-blue pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small blue pull-left"></div>
+                      <div class="div-small blue pull-left"></div>
+                      <div class="div-small blue pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="skill">skill</label>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                   </div>
                 </div>
@@ -205,69 +194,69 @@
                   </div>
                   <div class="images pull-left">
                   </div>
-                  <div class="bla pull-left">
+                  <div class="score pull-left">
                     <div class="sub-title">
                       21-0-9
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="health">health</label>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="attack">attack</label>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="magic">magic</label>
-                      <div class="div-small-blue pull-left"></div>
-                      <div class="div-small-blue pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small blue pull-left"></div>
+                      <div class="div-small blue pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="skill">skill</label>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                   </div>
 
@@ -278,73 +267,71 @@
                   </div>
                   <div class="images pull-left">
                   </div>
-                  <div class="bla pull-left">
+                  <div class="score pull-left">
                     <div class="sub-title">
                       9-0-21
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="health">health</label>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-green pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small green pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="attack">attack</label>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-red pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small red pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="magic">magic</label>
-                      <div class="div-small-blue pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small blue pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                     <div class="skill-row">
                       <label class="pull-left"for="skill">skill</label>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-purple pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
-                      <div class="div-small-grey pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small purple pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
+                      <div class="div-small grey pull-left"></div>
                     </div>
                   </div>
-
                 </div>
                 <div class="arrow">
                   <div class="arrows pull-right">
@@ -353,7 +340,7 @@
                   </div>
                 </div>
               </div>
-              <div class="box-wrapper col-80">
+              <div class="col-80 box-wrapper">
                 <div class="col-33 feature-blank">
                 </div>
                 <div class="col-33 feature-blank">
@@ -394,10 +381,9 @@
               </div>
               </div>
             </div>
-
           </div>
-          <div class="cf"></div>
-          <div class="main-bottom containe">
+<!-- main-middle section -->
+          <div class="main-middle containe cf">
               <div class="second">
                 <div class="col-20 feature-left">
                   <h2><b>top 5 plays</b></h2>
@@ -424,7 +410,8 @@
                 </div>
               </div>
           </div>
-          <div class="main-foot containe">
+<!-- main-bottom section -->
+          <div class="main-bottom containe">
               <div class="third">
                 <div class="col-100 feature-right">
                   <div class="col-10">
@@ -449,6 +436,7 @@
               </div>
           </div>
         </div>
+<!-- footer section -->
         <div class="footer">
           <div class="top-footer containe">
             <div id="firstTab" class="col-33 footer-green" onClick="changeClass(this.id)">
@@ -486,7 +474,6 @@
                 Contrary to popular belief, Lorem Ipsum is not simply <br> random text. It has roots in a piece of classical Latin Litera.
               </p>
               <span>13.Nov.2013 &nbsp <a class="a-green"href="#" >By@TheMinistryOL</a></span>
-
             </div>
             <div class="col-33">
               <h3>upcomming streams</h3>
