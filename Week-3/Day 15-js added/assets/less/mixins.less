@@ -1,0 +1,101 @@
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.vertical-bottom {
+  position: relative;
+  top: 100%;
+  transform: translate(0,-100%);
+}
+.horizontal-center {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.center-middle {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.containe {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+.vertical {
+  position: relative;
+  display: table;
+  width: 100%;
+}
+.vertical .inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.backImg {
+  background: url("../img/bg2.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.name-small{
+  height: 20%;
+  text-transform: uppercase;
+  color: @whiteColor;
+  font-size: 16px;
+  font-weight: 700;
+}
+.sub-title{
+  height: 20%;
+  font-weight: 700;
+  color: @whiteColor;
+  padding-left: 8px;
+  line-height: 100%;
+}
+.skill-row{
+  height: 15%;
+  font-size: 8px;
+  text-transform: uppercase;
+  line-height: 100%;
+  padding-top: 8px;
+  .pull-right;
+    label{
+      font-weight: 900;
+      padding-right: 5px;
+    }
+}
+.score{
+  height: 80%;
+  width: 70%;
+}
+.div-small{
+  width: 6px;
+  height: 7px;
+  margin-right: 2px;
+}
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+}
+.purple{
+  background-color: purple;
+}
+.blue{
+  background-color: blue;
+}
+.grey{
+  background-color: #474141;
+}
