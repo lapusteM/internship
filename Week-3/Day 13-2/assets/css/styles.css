@@ -18,9 +18,10 @@
   float: right;
 }
 .backImg {
-  background: url("../img/1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(rgba(175, 67, 91, 0.3), rgba(175, 67, 91, 0.3)), url('../img/1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 html,
@@ -151,9 +152,10 @@ body {
   float: left;
 }
 .background {
-  background: url("../img/1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(rgba(175, 67, 91, 0.3), rgba(175, 67, 91, 0.3)), url('../img/1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 .main-container {
@@ -165,7 +167,7 @@ body {
   top: 50%;
   transform: translate(0, -50%);
   color: #4a4a4a;
-  padding: 30px 50px 30px 50px;
+  padding: 30px 50px;
   font-size: 18px;
 }
 .plane {
@@ -201,7 +203,7 @@ input[type="text"] {
   color: #b84452;
   border: solid #cccccc 1px;
   border-radius: 2px;
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #e7ecc4;
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat right #e7ecc4;
   -webkit-appearance: none;
   background-position-x: 90%;
   font-size: 18px;
@@ -245,7 +247,7 @@ form {
   border-radius: 1px;
   color: #f8f7f0;
   background: #b84452;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   text-decoration: none;
   text-align: center;
   width: 170px;
