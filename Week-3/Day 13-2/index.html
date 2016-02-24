@@ -1,90 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Week3-Day3-2</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>  </head>
-  <body class="background">
-      <div class="main-container">
-        <div  class="plane">
-            <img src="assets/img/plane.png" alt="plane logo" />
-        </div>
-        <div class="title">
-            <h2>FLY AWAY</h2>
-            <h3>SOMEWHERE</h3>
-        </div>
-        <div class="bottom">
-          <form>
-            I want to fly from
-            <input class="input-first" type="text"/>
-          </form>
-        </div>
-        <div class="bottom">
-          <form>
-            to
-            <input class="input-second" type="text"/>
-          </form>
-        </div><br/>
-        <div class="bottom">
-          <span>I will be flying </span>
-          <select class="drop" title="sel">
-              <option value="40">WITH OTHERS</option>
-              <option value="41">ALONE</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-          </select>
-        </div>
-        <div class="top">
-          <form>
-            There will be
-            <input class="input-small"type="text" maxlength="2"/>
-            <span>&nbsppeople in total.</span>
-          </form>
-        </div>
-        <div class="return">
-          <span>This is a &nbsp</span>
-          <select class="drop" title="sel">
-              <option value="40">RETURN</option>
-              <option value="41">ONE-WAY</option>
-          </select>
-          <span>&nbsp flight</span><br />
-        </div>
-        <span>My dates are </span>
+
+<head>
+  <meta charset="utf-8">
+  <title>Week3-Day3-2</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="background">
+  <div class="main-container">
+    <div class="plane">
+      <img src="assets/img/plane.png" alt="plane logo" />
+    </div>
+    <div class="title">
+      <label for="">
+        <h2>FLY AWAY</h2>
+        <h3>SOMEWHERE</h3>
+      </label>
+    </div>
+    <form>
+      <div class="bottom">
+        <label for="">I want to fly from</label>
+        <input class="input-first" type="text" />
+      </div>
+      <div class="bottom">
+        <label for="">to</label>
+        <input class="input-second" type="text" />
+      </div>
+      <br/>
+      <div class="bottom">
+        <label for="">I will be flying </label>
         <select class="drop" title="sel">
-            <option value="40">FLEXIBLE</option>
-            <option value="41">FIXED</option>
-            <option value="42">+/- 2 Days</option>
+          <option value="40">WITH OTHERS</option>
+          <option value="41">ALONE</option>
+          <option value="42">42</option>
+          <option value="43">43</option>
         </select>
-        <div>
-          <form>
-            Departure date
-            <input class="input-small" type="text" maxlength="2"/>
-            /
-            <input class="input-small" type="text" maxlength="2"/>
-            /
-            <input class="input-small" type="text" maxlength="4"/>
-            <div  class="calendar">
-                <img src="assets/img/calendar.png" alt="plane logo" />
-            </div>
-          </form>
+      </div>
+      <div class="top">
+        <label for="">There will be</label>
+        <input class="input-small" type="text" maxlength="2" />
+        <label for="">&nbsp people in total.</label>
+      </div>
+      <div class="return">
+        <label for="">This is a &nbsp</label>
+        <select class="drop" title="sel">
+          <option value="40">RETURN</option>
+          <option value="41">ONE-WAY</option>
+        </select>
+        <label for="">&nbsp flight</label>
+        <br />
+      </div>
+      <label for="">My dates are </label>
+      <select class="drop" title="sel">
+        <option value="40">FLEXIBLE</option>
+        <option value="41">FIXED</option>
+        <option value="42">+/- 2 Days</option>
+      </select>
+        <label for="">Departure date</label>
+        <input class="input-small" type="text" maxlength="2" /> /
+        <input class="input-small" type="text" maxlength="2" /> /
+        <input class="input-small" type="text" maxlength="4" />
+        <div class="calendar">
+          <img src="assets/img/calendar.png" alt="plane logo" />
         </div>
-        <div>
-          <form class="form-bottom">
-            Return date
-            <input class="input-small" type="text" maxlength="2"/>
-            /
-            <input class="input-small" type="text" maxlength="2"/>
-            /
-            <input class="input-small" type="text" maxlength="4"/>
-            <div  class="calendar">
-                <img src="assets/img/calendar.png" alt="plane logo" />
-            </div>
-            <div class="btn">
-              <a href="#" class="btn">FIND FLIGHTS</a>
-            </div>
-          </form>
+      <div class="form-bottom">
+        <label for="">Return date</label>
+        <input class="input-small" type="text" maxlength="2" /> /
+        <input class="input-small" type="text" maxlength="2" /> /
+        <input class="input-small" type="text" maxlength="4" />
+        <div class="calendar">
+          <img src="assets/img/calendar.png" alt="plane logo" />
+        </div>
+        <div class="btn">
+          <a href="#" class="btn">FIND FLIGHTS</a>
         </div>
       </div>
-  </body>
+    </form>
+  </div>
+</body>
 </html>
