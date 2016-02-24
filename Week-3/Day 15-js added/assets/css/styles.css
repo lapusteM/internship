@@ -6158,6 +6158,67 @@ body {
 .main-content .slide {
   height: 500px;
   margin-top: 50px;
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+.main-content .slide .col-10 {
+  height: 100%;
+}
+.main-content .slide .col-10 .icon {
+  font-size: 50px;
+}
+.main-content .slide .col-10 i:hover {
+  cursor: pointer;
+}
+.main-content .slide .col-80 {
+  width: 100%;
+  margin: 0 auto;
+}
+.main-content .slide .slide-elem {
+  margin: 0;
+  background: transparent;
+  -webkit-user-select: none;
+}
+.main-content .slide .slide-content {
+  font-size: 20px;
+  padding: 150px 450px 0 165px;
+}
+.main-content .slide .slide-content h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+}
+.main-content .slide .slide-content h1 {
+  text-transform: uppercase;
+  font-size: 70px;
+  font-weight: 700;
+}
+.main-content .slide .slide-content hr {
+  width: 68%;
+  color: #474141;
+  border: 0;
+  height: 2px;
+  background: #474141;
+  margin-bottom: 5%;
+  margin-left: 0;
+  margin-top: 3%;
+}
+.main-content .slide .slide-content p::first-letter {
+  font-size: 30px;
+  font-weight: 700;
+}
+.main-content .slide .slide-content .learn {
+  padding-top: 50px;
+}
+.main-content .slide .slide-content .learn a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+  border: 2px solid #1c1c1c;
+  padding: 20px 30px 20px 30px;
+  margin-top: 50px;
+  font-weight: 700;
 }
 .main-content .main-top {
   height: 500px;
@@ -6650,69 +6711,6 @@ body {
 .last-footer a {
   text-decoration: none;
   color: #474141;
-}
-.slide {
-  position: relative;
-  width: 100%;
-  height: 100px;
-}
-.slide .col-10 {
-  height: 100%;
-}
-.slide .col-10 .icon {
-  font-size: 50px;
-}
-.slide .col-10 i:hover {
-  cursor: pointer;
-}
-.slide .col-80 {
-  width: 100%;
-  margin: 0 auto;
-}
-.slide .slide-elem {
-  margin: 0;
-  background: transparent;
-  -webkit-user-select: none;
-}
-.slide .slide-content {
-  font-size: 20px;
-  padding: 150px 450px 0 165px;
-}
-.slide .slide-content h3 {
-  text-transform: uppercase;
-  font-size: 30px;
-  font-weight: 700;
-}
-.slide .slide-content h1 {
-  text-transform: uppercase;
-  font-size: 70px;
-  font-weight: 700;
-}
-.slide .slide-content hr {
-  width: 68%;
-  color: #474141;
-  border: 0;
-  height: 2px;
-  background: #474141;
-  margin-bottom: 5%;
-  margin-left: 0;
-  margin-top: 3%;
-}
-.slide .slide-content p::first-letter {
-  font-size: 30px;
-  font-weight: 700;
-}
-.slide .slide-content .learn {
-  padding-top: 50px;
-}
-.slide .slide-content .learn a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: inherit;
-  border: 2px solid #1c1c1c;
-  padding: 20px 30px 20px 30px;
-  margin-top: 50px;
-  font-weight: 700;
 }
 .opacity {
   display: none;
