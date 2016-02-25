@@ -4041,6 +4041,7 @@ body {
 .navi2-font {
   font-size: 15px;
   font-weight: 900;
+  border: 2px solid transparent;
 }
 .navi2-font:hover {
   border: 2px solid #1c1c1c;
@@ -4111,7 +4112,7 @@ body {
   text-transform: uppercase;
   color: inherit;
   border: 2px solid #1c1c1c;
-  padding: 20px 30px 20px 30px;
+  padding: 20px 30px;
   margin-top: 50px;
   font-weight: 700;
 }

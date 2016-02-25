@@ -177,8 +177,13 @@ body {
 .right .footer {
   height: 80px;
 }
+.right .header h5 {
+  color: #9b9b9b;
+  font-size: 12px;
+  margin-top: 3px;
+}
 .main {
-  margin: 0 40px 0 40px;
+  margin: 0 40px;
 }
 .main hr {
   width: 107%;
@@ -192,7 +197,7 @@ body {
   margin-top: 3px;
 }
 .header {
-  padding: 20px 40px 20px 40px;
+  padding: 20px 40px;
 }
 .header hr {
   width: 107%;
@@ -218,9 +223,4 @@ body {
   width: 80%;
   margin-left: 35px;
   border-color: black;
-}
-.right .header h5 {
-  color: #9b9b9b;
-  font-size: 12px;
-  margin-top: 3px;
 }

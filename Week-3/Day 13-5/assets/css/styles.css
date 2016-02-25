@@ -199,7 +199,7 @@ body {
   float: left;
 }
 body {
-  background-color: #363C5E;
+  background-color: #363c5e;
 }
 .content {
   position: relative;
@@ -223,7 +223,7 @@ body {
 }
 .main-content p {
   text-align: center;
-  color: white;
+  color: #ffffff;
   font-size: 45px;
 }
 .main-content :nth-child(3) {
@@ -232,7 +232,7 @@ body {
 .second-content {
   height: 60%;
   width: 800px;
-  box-shadow: 0px 5px 103px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 5px 103px -9px rgba(0, 0, 0, 0.75);
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
@@ -247,7 +247,7 @@ body {
   background-size: cover;
 }
 .second-content .left p:first-child {
-  color: #FF7F00;
+  color: #ff7f00;
   font-size: 70px;
   text-transform: uppercase;
   line-height: 60px;
@@ -272,13 +272,13 @@ body {
   font-size: 20px;
 }
 .second-content .left p:nth-child(4) span {
-  color: #FF7F00;
+  color: #ff7f00;
 }
 .second-content .right {
   float: left;
   width: 20%;
   height: 100%;
-  background-color: #FF7F00;
+  background-color: #ff7f00;
 }
 .second-content .right .link {
   position: relative;
@@ -286,7 +286,7 @@ body {
   transform: translate(0, -50%);
 }
 .second-content .right .link a {
-  color: white;
+  color: #ffffff;
   font-size: 30px;
   line-height: 40px;
   text-align: center;

@@ -35,7 +35,6 @@ body {
 :before {
   box-sizing: border-box;
 }
-
 .cf:before,
 .cf:after,
 .row:before,
@@ -43,25 +42,19 @@ body {
     content: "";
     display: table;
 }
-
 .cf:after,
 .row:after {
   clear: both;
 }
-
-body{
-background-color: @bodyBackground;
+body {
+  background-color: @bodyBackground;
 }
-.container{
+.container {
   .horizontal-center;
   width: 650px;
   height: 100%;
- }
-// // .main-content{
-// //   margin: 20px 10px 20px 10px;
-//
-// }
-.left{
+}
+.left {
   .pull-left;
   background-color: @leftDiv;
   position: relative;
@@ -70,7 +63,7 @@ background-color: @bodyBackground;
   .vertical-center;
   .height;
 }
-.right{
+.right {
   .pull-left;
   background-color: @rightDiv;
   position: relative;
@@ -80,58 +73,56 @@ background-color: @bodyBackground;
   margin-left: 45px;
   .height;
 }
+.right {
+  .header {
+    h5 {
+      color: @spanColor;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+  }
+}
 .main {
-  margin: 0 40px 0 40px;
-  hr{
+  margin: 0 40px;
+  hr {
     width: 107%;
   }
-
-  h4{
-    color:@mainColor;
+  h4 {
+    color: @mainColor;
   }
-  h5{
+  h5 {
     color: @spanColor;
     font-size: 12px;
     margin-top: 3px;
   }
 }
-.header{
-  padding: 20px 40px 20px 40px;
-  hr{
+.header {
+  padding: 20px 40px;
+  hr {
     width: 107%;
     border-color: black;
   }
-  h3{
-    color:@mainColor;
+  h3 {
+    color: @mainColor;
   }
 }
-.footer{
-    a{
-      text-decoration: none;
-      color: inherit;
-    }
-    ul{
-      width: 100%;
-      margin-left: 30px;
-}
-    li{
-      display: inline;
-      margin-left: 25px;
-      font-size: 20px;
-    }
-    hr{
-      width: 80%;
-      margin-left: 35px;
-      border-color: black;
-
-    }
-}
-.right{
-  .header{
-    h5{
-      color: @spanColor;
-      font-size: 12px;
-      margin-top: 3px;
-    }
+.footer {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    width: 100%;
+    margin-left: 30px;
+  }
+  li {
+    display: inline;
+    margin-left: 25px;
+    font-size: 20px;
+  }
+  hr {
+    width: 80%;
+    margin-left: 35px;
+    border-color: black;
   }
 }

@@ -1,6 +1,7 @@
 // out: ../css/styles.css
 
 @import 'variables';
+@import "mixins";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -100,90 +101,90 @@ body {
   float: left;
 }
 
-body{
-  background-color: #363C5E;
+body {
+  background-color: @bodyBackground;
 }
-.content{
-	// .horizontal-center;
+.content {
+  // .horizontal-center;
   .vertical-center;
   margin: 0 auto;
   height: 60%;
   width: 800px;
 }
-.main-content{
-  height:40%;
+.main-content {
+  height: 40%;
   width: 800px;
-	.horizontal-center;
-			.logo{
-				width: 119px;
-				height: 59px;
-				margin: 0 auto;
-			}
-			p{
-				text-align: center;
-				color: white;
-				font-size: 45px;
-			}
-			:nth-child(3){
-				font-size: 35px;
-			}
+  .horizontal-center;
+  .logo {
+    width: 119px;
+    height: 59px;
+    margin: 0 auto;
+  }
+  p {
+    text-align: center;
+    color: @whiteColor;
+    font-size: 45px;
+  }
+   :nth-child(3) {
+    font-size: 35px;
+  }
 }
-.second-content{
-	height: 60%;
+.second-content {
+  height: 60%;
   width: 800px;
-  box-shadow: 0px 5px 103px -9px rgba(0,0,0,0.75);
-	.horizontal-center;
-			.left{
-				.pull-left;
-				width: 80%;
-				height: 100%;
-				.backImg;
-					p:first-child{
-						color:#FF7F00;
-						font-size: 70px;
-						text-transform: uppercase;
-						line-height: 60px;
-						margin-top: 70px;
-						margin-left: 70px;
-					}
-					p:nth-child(2){
-						color: @mainColor;
-						font-size: 30px;
-						margin-left: 70px;
-					}
-					hr{
-						width: 260px;
-						margin-left: 70px;
-						margin-top: 20px;
-						margin-bottom: 20px;
-					}
-					p:nth-child(4){
-						text-transform: uppercase;
-						color: @mainColor;
-						margin-left: 70px;
-						font-size: 20px;
-							span{
-								color:#FF7F00;
-							}
-					}
-			}
-			.right{
-				.pull-left;
-				width: 20%;
-				height: 100%;
-				background-color: #FF7F00;
-					.link{
-						.vertical-center;
-						a{color: white;
-						font-size: 30px;
-						line-height: 40px;
-						text-align: center;
-						text-decoration: none;
-					}
-
-					}
-					p{
-						text-transform: uppercase;
-					}
-			}
+  box-shadow: 0 5px 103px -9px rgba(0,0,0,0.75);
+  .horizontal-center;
+  .left {
+    .pull-left;
+    width: 80%;
+    height: 100%;
+    .backImg;
+    p:first-child {
+      color: @orangeColor;
+      font-size: 70px;
+      text-transform: uppercase;
+      line-height: 60px;
+      margin-top: 70px;
+      margin-left: 70px;
+    }
+    p:nth-child(2) {
+      color: @mainColor;
+      font-size: 30px;
+      margin-left: 70px;
+    }
+    hr {
+      width: 260px;
+      margin-left: 70px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    p:nth-child(4) {
+      text-transform: uppercase;
+      color: @mainColor;
+      margin-left: 70px;
+      font-size: 20px;
+      span {
+        color: @orangeColor;
+      }
+    }
+  }
+  .right {
+    .pull-left;
+    width: 20%;
+    height: 100%;
+    background-color: @orangeColor;
+    .link {
+      .vertical-center;
+      a {
+        color: @whiteColor;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+    p {
+      text-transform: uppercase;
+    }
+  }
 }
