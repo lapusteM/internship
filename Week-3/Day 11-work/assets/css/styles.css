@@ -4072,3 +4072,17 @@ body {
 .main-section .col-50 {
   height: 100%;
 }
+.main-section .detail-img img {
+  transition: all 0.2s ease-in-out;
+  height: 150px;
+  width: 25%;
+  margin: 5px;
+  padding: 0;
+}
+.main-section .detail-img img:hover {
+  transform: scale(1.5);
+  cursor: zoom-in;
+}
+.main-section .detail-img img :first-child {
+  margin-left: 0;
+}
