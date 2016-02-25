@@ -195,6 +195,54 @@ hr {
   font-family: 'Quicksand', sans-serif;
   color: #646561;
 }
+.special-btn {
+  width: 30%;
+  height: 22%;
+  position: relative;
+  top: 45%;
+  left: 40%;
+  transform: translate(-40%, -45%);
+}
+.special-btn .selected {
+  position: relative;
+}
+.special-btn li {
+  display: inline;
+  padding-left: 20px;
+}
+.special-btn a {
+  font-size: 20px;
+  color: #444541;
+  text-decoration: none;
+}
+.selected::before {
+  left: 10px;
+  content: "";
+  border: 1px solid #444541;
+  display: block;
+  width: 350px;
+  height: 500px;
+  position: absolute;
+  bottom: -40px;
+  z-index: -1;
+}
+.selected a {
+  color: #444541;
+  position: relative;
+}
+.selected a::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: 40%;
+  border: 1px solid #444541;
+  width: 35px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
 .main-first {
   margin-top: 100px;
   height: 680px;
@@ -431,19 +479,19 @@ hr {
   border: 0;
   height: 1px;
   background: #646561;
-  margin: 0 0 70px 190px;
+  margin: 0 0 70px 45%;
   display: inline-block;
 }
 .arrows-btn {
   color: #646561;
-  margin-left: 73px;
+  margin-left: 25%;
   font-size: 25px;
 }
 .slide-out {
   float: right;
   height: 400px;
   margin-top: 50px;
-  margin-right: -80px;
+  margin-right: -140px;
   background: url("../img/5.jpg");
   background-position: center top;
   background-repeat: no-repeat;

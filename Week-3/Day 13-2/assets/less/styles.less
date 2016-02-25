@@ -172,10 +172,15 @@ input[type="text"] {
   color: @redColor;
   border: solid #cccccc 1px;
   border-radius: 2px;
-  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat right rgb(231, 236, 196);
-  -webkit-appearance: none;
-  background-position-x: 90%;
   font-size: 18px;
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  background-color:#dadac6;
+  background-image: url(../img/caret.png);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: 8%;
 }
 form {
   font-size: 18px;
