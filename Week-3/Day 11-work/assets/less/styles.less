@@ -226,11 +226,11 @@ body {
   }
 }
 // header section ends
-// main section
+// main section top
 // main-left
-.main-section {
+.main-section-top{
   margin-top: 80px;
-  height: 950px;
+  height: 1000px;
   border-bottom: 1px solid @grey-lightColor;
   .col-50 {
     height: 100%;
@@ -436,4 +436,100 @@ body {
     border-radius: 1px;
     margin-bottom: 15px;
   }
+}
+// main section bottom
+.main-section-bottom{
+  height: 600px;
+  h3{
+    color: @black-bg;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 50px;
+    left: 420px;
+    position: relative;
+  }
+  hr {
+    position: relative;
+    left: 420px;
+    margin-top: 63px;
+    width: 50px;
+    color: @orange-bg;
+    border: 0;
+    height: 3px;
+    background: @orange-bg;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+  }
+  p{
+    text-align: center;
+  }
+  .col-20{
+    margin-top: 50px;
+    height: 100%;
+    width: 23%;
+    margin-right: 32px;
+  }
+  .margins2{
+    margin-right: 0;
+  }
+  .image-bottom{
+    height: 70%;
+    background: url("../img/model.png");
+    .backImg;
+  }
+  .image-bottom-after{
+    height: 30%;
+    .star-rating {
+      position: relative;
+      left: 90px;
+      margin: 25px 0 25px 0;
+      font-size: 0;
+      width: 120px;
+    }
+    .star-rating__wrap {
+      display: inline-block;
+      font-size: 1rem;
+    }
+    .star-rating__wrap:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .star-rating__ico {
+      float: right;
+      padding-left: 2px;
+      cursor: pointer;
+      color: #FFB300;
+    }
+    .star-rating__ico:last-child {
+      padding-left: 0;
+    }
+    .star-rating__input {
+      display: none;
+    }
+    .star-rating__ico:hover:before,
+    .star-rating__ico:hover ~ .star-rating__ico:before,
+    .star-rating__input:checked ~ .star-rating__ico:before {
+      content: "\f005";
+    }
+    p{
+      text-align: center;
+    }
+    h4{
+      text-align: center;
+      font-weight: 700;
+      padding-top: 10 px;
+      color: @black-bg;
+    }
+  }
+}
+// footer section
+.footer-section{
+  height: 400px;
+  background-color: @black-bg;
+}
+.footer-section-bottom{
+  height: 50px;
+  background-color: lighten(@black-bg, 10%);
 }

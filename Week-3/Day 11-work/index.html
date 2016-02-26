@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Day 11</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-  </head>
-  <body>
-    <div class="wrapper">
+<head>
+  <meta charset="utf-8">
+  <title>Day 11</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="wrapper">
 <!-- navigation starts here -->
-      <div class="navigation">
+    <div class="navigation">
       <nav class="navbar navbar-inverse navi">
         <div class="containe">
           <ul class="navbar-nav pull-left">
@@ -41,8 +41,12 @@
             <li class="navi2-font"><a href="#">portofolio</a></li>
             <li class="navi2-font"><a href="#">contact</a></li>
             <li class="navi2-font"><a href="#">shop</a></li>
-            <li class="navi2-font"><button type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-search"></i></button></li>
-            <li class="navi2-font"><button type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-shopping-cart"></i></button></li>
+            <li class="navi2-font">
+              <button type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-search"></i></button>
+            </li>
+            <li class="navi2-font">
+              <button type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-shopping-cart"></i></button>
+            </li>
             <div class="round-2 pull-right">
               2
             </div>
@@ -54,7 +58,6 @@
 <!-- header section -->
     <div class="header">
       <div class="image-left pull-left">
-
       </div>
       <div class="header-text pull-left">
         <h2>detail style 1</h2>
@@ -68,22 +71,122 @@
       </div>
     </div>
 <!-- header sections ends -->
-<!-- main section -->
-    <div class="main-section containe">
+<!-- main section top-->
+    <div class="main-section-top containe">
       <div class="col-50 main-left">
         <div class="col-100 product-image">
-                <img src="assets/img/model.png">
-            </div>
-            <div class="col-100 detail-img">
-                <img class="col-25 margins" src="assets/img/model.png">
-                <img class="col-25 margins" src="assets/img/model.png">
-                <img class="col-25 margins" src="assets/img/model.png">
-                <img class="col-25 margins" src="assets/img/model.png">
-            </div>
+          <img src="assets/img/model.png">
+        </div>
+        <div class="col-100 detail-img">
+          <img class="col-25 margins" src="assets/img/model.png">
+          <img class="col-25 margins" src="assets/img/model.png">
+          <img class="col-25 margins" src="assets/img/model.png">
+          <img class="col-25 margins" src="assets/img/model.png">
+        </div>
       </div>
       <div class="col-50 main-right">
-          <h4>long dress with chain neckline</h4>
-          <div class="star-rating pull-left">
+        <h4>long dress with chain neckline</h4>
+        <div class="star-rating pull-left">
+          <div class="star-rating__wrap">
+            <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+            <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
+            <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+            <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars"></label>
+            <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+            <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars"></label>
+            <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+            <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars"></label>
+            <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+            <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
+          </div>
+        </div>
+        <span class="pull-left"><a href="#">3&nbsp;reviews</a></span>
+        <p class="pull-left"><a href="#">Add your reviews</a></p>
+        <div class="cf"></div>
+        <h4 class="pull-left"><del>$&nbsp;34.00</del></h4>
+        <h2 class="pull-left">$26.00</h2>
+        <div class="cf"></div>
+        <p>
+          References: 123456
+        </p>
+        <p class="pull-left">
+          Available:
+          <p class="pull-left green-p">Instock</p>
+        </p>
+        <div class="cf"></div>
+        <p>
+          Lorem Ipsum este pur şi simplu o machetă pentru text a industriei
+          <br> tipografice.
+        </p>
+        <hr>
+        <p class="color-p pull-left">Color</p>
+        <form class="select-color pull-left">
+          <button class="pink-color" name="subject" type="submit" value=""></button>
+          <button class="brown-color" name="subject" type="submit" value=""></button>
+          <button class="violet-color" name="subject" type="submit" value=""></button>
+          <button class="blue-color" name="subject" type="submit" value=""></button>
+        </form>
+        <div class="cf"></div>
+        <p class="size-p pull-left">size</p>
+        <form class="select-size pull-left">
+          <button class="size-nr" name="subject" type="submit" value="">S</button>
+          <button class="size-nr" name="subject" type="submit" value="">M</button>
+          <button class="size-nr" name="subject" type="submit" value="">L</button>
+          <button class="size-nr" name="subject" type="submit" value="">XL</button>
+        </form>
+        <div class="cf"></div>
+        <p class="size-p pull-left">quantity</p>
+        <hr>
+        <br>
+        <div class="tabmenu">
+          <div id="polski-tab" class="current">
+            <a href="#">add to cart</a>
+          </div>
+          <div id="deutsch-tab">
+            <a href="#"><i class="fa fa-heart">&nbsp;</i>Add to wishlist</a>
+          </div>
+          <div id="russian-tab">
+            <a href="#"><i class="fa fa-retweet">&nbsp;</i>Add to compare</a>
+          </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <div class="containe">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">description<i class="fa fa-caret-down pull-right"></i></button>
+          <div id="demo" class="collapse">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+        <br>
+        <div class="containe">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">review<i class="fa fa-caret-down pull-right"></i></button>
+          <div id="demo" class="collapse">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+        <br>
+        <div class="containe">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">additional info<i class="fa fa-caret-down pull-right"></i></button>
+          <div id="demo" class="collapse">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- main section bottom -->
+    <div class="main-section-bottom containe">
+      <hr class="pull-left">
+      <h3 class="pull-left">related items</h3>
+      <hr class="pull-left">
+      <div class="cf"></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+      <div class="col-20 pull-left">
+        <div class="image-bottom">
+
+        </div>
+        <div class="image-bottom-after">
+          <div class="star-rating ">
             <div class="star-rating__wrap">
               <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
               <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
@@ -97,83 +200,91 @@
               <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
             </div>
           </div>
-          <span class="pull-left"><a href="#">3&nbsp;reviews</a></span>
-          <p class="pull-left"><a href="#">Add your reviews</a></p>
-          <div class="cf"></div>
-          <h4 class="pull-left"><del>$&nbsp;34.00</del></h4>
-          <h2 class="pull-left">$26.00</h2>
-          <div class="cf"></div>
-          <p>
-            References: 123456
-          </p>
-          <p class="pull-left">
-            Available: <p class="pull-left green-p">Instock</p>
-          </p>
-          <div class="cf"></div>
-          <p>
-            Lorem Ipsum este pur şi simplu o machetă pentru text a industriei<br> tipografice.
-          </p>
-          <hr>
-          <p class="color-p pull-left">Color</p>
-          <form class="select-color pull-left">
-            <button class="pink-color" name="subject" type="submit" value=""></button>
-            <button class="brown-color" name="subject" type="submit" value=""></button>
-            <button class="violet-color" name="subject" type="submit" value=""></button>
-            <button class="blue-color" name="subject" type="submit" value=""></button>
-          </form>
-          <div class="cf"></div>
-          <p class="size-p pull-left">size</p>
-          <form class="select-size pull-left">
-            <button class="size-nr" name="subject" type="submit" value="">S</button>
-            <button class="size-nr" name="subject" type="submit" value="">M</button>
-            <button class="size-nr" name="subject" type="submit" value="">L</button>
-            <button class="size-nr" name="subject" type="submit" value="">XL</button>
-          </form>
-          <div class="cf"></div>
-          <p class="size-p pull-left">quantity</p>
-          <hr>
-          <br>
-          <div class="tabmenu">
-            <div id="polski-tab" class="current">
-              <a href="#">add to cart</a>
+          <p>Duis autem eum iriure</p>
+          <h4>$ 56.00</h4>
+        </div>
+      </div>
+      <div class="col-20 pull-left">
+        <div class="image-bottom">
+
+        </div>
+        <div class="image-bottom-after">
+          <div class="star-rating ">
+            <div class="star-rating__wrap">
+              <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
             </div>
-            <div id="deutsch-tab">
-              <a href="#"><i class="fa fa-heart">&nbsp;</i>Add to wishlist</a>
+          </div>
+          <p>Duis autem eum iriure</p>
+          <h4>$ 56.00</h4>
+        </div>
+      </div>
+      <div class="col-20 pull-left">
+        <div class="image-bottom">
+
+        </div>
+        <div class="image-bottom-after">
+          <div class="star-rating ">
+            <div class="star-rating__wrap">
+              <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
             </div>
-            <div id="russian-tab">
-              <a href="#"><i class="fa fa-retweet">&nbsp;</i>Add to compare</a>
+          </div>
+          <p>Duis autem eum iriure</p>
+          <h4>$ 56.00</h4>
+        </div>
+      </div>
+      <div class="col-20 margins2 pull-left">
+        <div class="image-bottom">
+
+        </div>
+        <div class="image-bottom-after">
+          <div class="star-rating ">
+            <div class="star-rating__wrap">
+              <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars"></label>
+              <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
             </div>
-            <br><br>
-            <hr>
-            <div class="containe">
-              <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">description<i class="fa fa-caret-down pull-right"></i></button>
-              <div id="demo" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </div>
-            </div><br>
-            <div class="containe">
-              <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">review<i class="fa fa-caret-down pull-right"></i></button>
-              <div id="demo" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </div>
-            </div><br>
-            <div class="containe">
-              <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">additional info<i class="fa fa-caret-down pull-right"></i></button>
-              <div id="demo" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </div>
-            </div>
+          </div>
+          <p>Duis autem eum iriure</p>
+          <h4>$ 56.00</h4>
         </div>
       </div>
     </div>
+<!-- footer section -->
+    <div class="cf"></div>
+    <div class="footer-section">
+
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </body>
+    <div class="footer-section-bottom">
+
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
 </html>
