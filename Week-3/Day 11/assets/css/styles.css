@@ -4272,7 +4272,7 @@ body ul {
   background: transparent;
   display: block;
   float: left;
-  padding: 10px 10px;
+  padding: 10px;
   border: 1px solid transparent;
   text-align: center;
   font-weight: 700;
@@ -4312,14 +4312,12 @@ body ul {
 .main-section-bottom hr {
   position: relative;
   left: 420px;
-  margin-top: 63px;
   width: 50px;
   color: #c8a730;
   border: 0;
   height: 3px;
   background: #c8a730;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 63px 20px 0 20px;
   display: inline-block;
 }
 .main-section-bottom p {
@@ -4347,7 +4345,7 @@ body ul {
 .main-section-bottom .image-bottom-after .star-rating {
   position: relative;
   left: 90px;
-  margin: 25px 0 25px 0;
+  margin: 25px 0;
   font-size: 0;
   width: 150px;
 }

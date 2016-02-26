@@ -48,6 +48,7 @@ html, body {
   font-family: 'Merriweather', sans-serif;
   font-weight: 700;
 }
+/*.header section starts*/
 .containe {
   height: 100%;
   max-width: 1300px;
@@ -122,6 +123,8 @@ html, body {
   width: 20px;
   height: 20px;
 }
+/*header section ends*/
+/*main section start*/
 .container-main {
   width: 100%;
   max-width: 800px;
@@ -332,6 +335,8 @@ html, body {
   font-weight: 700;
   margin-top: 10px;
 }
+/*main section ends*/
+/*footer section starts*/
 .footer {
   font-weight: 700;
   padding-bottom: 50px;
