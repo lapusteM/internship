@@ -4349,7 +4349,7 @@ body ul {
   left: 90px;
   margin: 25px 0 25px 0;
   font-size: 0;
-  width: 120px;
+  width: 150px;
 }
 .main-section-bottom .image-bottom-after .star-rating__wrap {
   display: inline-block;
@@ -4409,6 +4409,13 @@ body ul {
   padding-right: 50px;
   padding-top: 40px;
 }
+.footer-section .footer-section-inner .first-col-footer span i {
+  padding: 40px 40px 0 0;
+  font-size: 20px;
+}
+.footer-section .footer-section-inner .first-col-footer a {
+  color: inherit;
+}
 .footer-section .footer-section-inner .second-col-footer {
   width: 15%;
   height: 100%;
@@ -4458,6 +4465,26 @@ body ul {
 .footer-section .footer-section-inner .fourth-col-footer p {
   padding-right: 50px;
   padding-top: 10px;
+}
+.footer-section .footer-section-inner .fourth-col-footer input {
+  width: 90%;
+  -webkit-user-select: none;
+  margin-top: 30px;
+  background-color: inherit;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  font-style: italic;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.footer-section .footer-section-inner .fourth-col-footer input:focus {
+  outline: none;
+}
+.footer-section .footer-section-inner .fourth-col-footer i {
+  position: relative;
+  top: 45px;
+  right: 20px;
+  font-size: 20px;
 }
 .footer-section-bottom {
   height: 40px;
