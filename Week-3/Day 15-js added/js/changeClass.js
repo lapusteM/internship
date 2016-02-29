@@ -64,3 +64,32 @@ function changeClass(event){
     }
   }
 }
+
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+// var fratica = document.getElementsByClassName('footer-green');
+// for(var i = 0; i < fratica.length; i++) {
+//   fratica[i].addEventListener('click', changeBg);
+// }
+//
+// function changeBg(event) {
+//   var evClass = event.currentTarget.classList;
+//   var evChild = event.currentTarget.children[3].classList;
+//   if(evClass.contains("footer-green")) {
+//     for(var i = 0; i < fratica.length; i++) {
+//       fratica[i].classList.remove("active");
+//       fratica[i].classList.add(footer-green);
+//       fratica[i].children[3].classList.remove("active");
+//       fratica[i].children[3].classList.add("footer-green");
+//     }
+//     evClass.remove("footer-green");
+//     evClass.add("active");
+//     evChild.remove("footer-green");
+//     evChild.add("active");
+//
+//   } else {
+//     evClass.remove("active");
+//     evClass.add("footer-green");
+//     evChild.remove("active");
+//     evChild.add("footer-green");
+//   }
+// }

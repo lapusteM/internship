@@ -5,8 +5,9 @@
   border: solid 1px grey;
   display: block;
   margin: 0 auto;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  position: relative;
+  top: 70px;
+
 }
 body {
   background-color: gainsboro;
